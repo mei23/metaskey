@@ -39,6 +39,7 @@ export type INote = {
 	replyId: mongo.ObjectID;
 	renoteId: mongo.ObjectID;
 	poll: {
+		period: Date;
 		choices: Array<{
 			id: number;
 		}>

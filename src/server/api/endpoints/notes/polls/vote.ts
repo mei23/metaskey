@@ -59,6 +59,10 @@ export default define(meta, (ps, user) => new Promise(async (res, rej) => {
 		return rej('already voted');
 	}
 
+	if (note.poll.period && (note.poll.period.getTime() - Date.now() < 0)) {
+		return rej('poll period expired');
+	}
+
 	// Create vote
 	await Vote.insert({
 		createdAt: new Date(),

@@ -1,5 +1,6 @@
 <template>
 <div class="mk-poll-editor">
+	<ui-input type="date"></ui-input>
 	<p class="caution" v-if="choices.length < 2">
 		<fa icon="exclamation-triangle"/>{{ $t('no-only-one-choice') }}
 	</p>
@@ -72,6 +73,8 @@ export default Vue.extend({
 <style lang="stylus" scoped>
 .mk-poll-editor
 	padding 8px
+	max-height 300px
+	overflow auto
 
 	> .caution
 		margin 0 0 8px 0

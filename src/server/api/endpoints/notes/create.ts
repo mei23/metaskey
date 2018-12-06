@@ -133,10 +133,10 @@ export const meta = {
 
 		poll: {
 			validator: $.obj({
-				choices: $.arr($.str)
+				period: $.num.optional.nullable,
+				choices: $.arr($.str.range(0, 50))
 					.unique()
 					.range(2, 10)
-					.each(c => c.length > 0 && c.length < 50)
 			}).optional.strict(),
 			desc: {
 				'ja-JP': 'アンケート'
@@ -210,16 +210,26 @@ export default define(meta, (ps, user, app) => new Promise(async (res, rej) => {
 		}
 	}
 
+	let poll: INote['poll'];
+
 	if (ps.poll) {
-		(ps.poll as any).choices = (ps.poll as any).choices.map((choice: string, i: number) => ({
-			id: i, // IDを付与
-			text: choice.trim(),
-			votes: 0
-		}));
+		const now = new Date();
+		if (ps.poll.period && (ps.poll.period <= now.getTime())) {
+			return rej('invalid poll period range');
+		}
+
+		poll = {
+			period: ps.poll.period ? new Date(ps.poll.period) : null,
+			choices: ps.poll.choices.map((choice: string, i: number) => ({
+				id: i, // IDを付与
+				text: choice.trim(),
+				votes: 0
+			}))
+		};
 	}
 
 	// テキストが無いかつ添付ファイルが無いかつRenoteも無いかつ投票も無かったらエラー
-	if (!(ps.text || files.length || renote || ps.poll)) {
+	if (!(ps.text || files.length || renote || poll)) {
 		return rej('text, fileIds, renoteId or poll is required');
 	}
 
@@ -227,7 +237,7 @@ export default define(meta, (ps, user, app) => new Promise(async (res, rej) => {
 	create(user, {
 		createdAt: new Date(),
 		files: files,
-		poll: ps.poll,
+		poll: poll,
 		text: ps.text,
 		reply,
 		renote,
