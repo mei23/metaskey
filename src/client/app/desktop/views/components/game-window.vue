@@ -1,7 +1,7 @@
 <template>
 <mk-window ref="window" width="500px" height="560px" :popout-url="popout" @closed="destroyDom">
 	<span slot="header" :class="$style.header"><fa icon="gamepad"/>{{ $t('game') }}</span>
-	<x-reversi :class="$style.content" @gamed="g => game = g"/>
+	<x-game :class="$style.content" />
 </mk-window>
 </template>
 
@@ -13,7 +13,7 @@ import { url } from '../../../config';
 export default Vue.extend({
 	i18n: i18n('desktop/views/components/game-window.vue'),
 	components: {
-		XReversi: () => import('../../../common/views/components/games/reversi/reversi.vue').then(m => m.default)
+		XGame: () => import('../../../common/views/components/games/index.vue').then(m => m.default)
 	},
 	data() {
 		return {

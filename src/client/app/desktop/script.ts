@@ -25,6 +25,7 @@ import MkMessagingRoom from './views/pages/messaging-room.vue';
 import MkNote from './views/pages/note.vue';
 import MkSearch from './views/pages/search.vue';
 import MkTag from './views/pages/tag.vue';
+import MkGames from './views/pages/games/index.vue';
 import MkReversi from './views/pages/games/reversi.vue';
 import MkShare from './views/pages/share.vue';
 import MkFollow from '../common/views/pages/follow.vue';
@@ -147,6 +148,7 @@ init(async (launch) => {
 			{ path: '/search', component: MkSearch },
 			{ path: '/tags/:tag', name: 'tag', component: MkTag },
 			{ path: '/share', component: MkShare },
+			{ path: '/games', component: MkGames },
 			{ path: '/games/reversi/:game?', component: MkReversi },
 			{ path: '/@:user', name: 'user', component: MkUser },
 			{ path: '/@:user/following', name: 'userFollowing', component: MkUserFollowingOrFollowers },

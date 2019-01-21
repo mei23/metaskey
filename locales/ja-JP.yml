@@ -147,6 +147,10 @@ common:
     title: "問題が発生しました"
     retry: "やり直す"
 
+  games:
+    game: "ゲーム"
+    reversi: "リバーシ"
+
   reversi:
     drawn: "引き分け"
     my-turn: "あなたのターンです"
