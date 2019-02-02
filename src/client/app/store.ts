@@ -309,15 +309,17 @@ export default (os: MiOS) => new Vuex.Store({
 				},
 
 				stackLeftDeckColumn(state, id) {
-					const i = state.deck.layout.findIndex(ids => ids.indexOf(id) != -1);
-					state.deck.layout = state.deck.layout.map(ids => erase(id, ids));
-					const left = state.deck.layout[i - 1];
-					if (left) state.deck.layout[i - 1].push(id);
-					state.deck.layout = state.deck.layout.filter(ids => ids.length > 0);
+					const i = state.deck.layout.findIndex(ids => ~ids.indexOf(id));
+					if (i) {
+						state.deck.layout = state.deck.layout.map(ids => erase(id, ids));
+						const left = state.deck.layout[i - 1];
+						if (left) state.deck.layout[i - 1].push(id);
+						state.deck.layout = state.deck.layout.filter(ids => ids.length > 0);
+					}
 				},
 
 				popRightDeckColumn(state, id) {
-					const i = state.deck.layout.findIndex(ids => ids.indexOf(id) != -1);
+					const i = state.deck.layout.findIndex(ids => ~ids.indexOf(id));
 					state.deck.layout = state.deck.layout.map(ids => erase(id, ids));
 					state.deck.layout.splice(i + 1, 0, [id]);
 					state.deck.layout = state.deck.layout.filter(ids => ids.length > 0);
