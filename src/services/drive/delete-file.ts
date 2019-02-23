@@ -1,5 +1,5 @@
 import * as Minio from 'minio';
-import DriveFile, { DriveFileChunk, IDriveFile, getDriveFileBucket } from '../../models/drive-file';
+import DriveFile, { DriveFileChunk, IDriveFile } from '../../models/drive-file';
 import DriveFileThumbnail, { DriveFileThumbnailChunk } from '../../models/drive-file-thumbnail';
 import config from '../../config';
 import driveChart from '../../services/chart/drive';
