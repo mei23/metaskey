@@ -59,7 +59,9 @@ export default function load() {
 			[optional]: true,
 			host: 'string!',
 			port: 'number!',
-			pass: 'string!'
+			pass: 'string!',
+			db: 'number!?',
+			prefix: 'string!?'
 		},
 		autoAdmin: 'boolean!?',
 		proxy: 'string!?',
