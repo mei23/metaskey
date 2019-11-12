@@ -24,6 +24,9 @@ const jrd = 'application/jrd+json';
 const xrd = 'application/xrd+xml';
 
 router.get('/.well-known/host-meta', async ctx => {
+	ctx.set('Access-Control-Allow-Methods', 'GET');
+	ctx.set('Access-Control-Allow-Origin', '*');
+	ctx.set('Access-Control-Max-Age', '31536000');
 	ctx.set('Content-Type', xrd);
 	ctx.body = XRD({ element: 'Link', attributes: {
 		type: xrd,
@@ -32,6 +35,9 @@ router.get('/.well-known/host-meta', async ctx => {
 });
 
 router.get('/.well-known/host-meta.json', async ctx => {
+	ctx.set('Access-Control-Allow-Methods', 'GET');
+	ctx.set('Access-Control-Allow-Origin', '*');
+	ctx.set('Access-Control-Max-Age', '31536000');
 	ctx.set('Content-Type', jrd);
 	ctx.body = {
 		links: [{
@@ -43,10 +49,17 @@ router.get('/.well-known/host-meta.json', async ctx => {
 });
 
 router.get('/.well-known/nodeinfo', async ctx => {
+	ctx.set('Access-Control-Allow-Methods', 'GET');
+	ctx.set('Access-Control-Allow-Origin', '*');
+	ctx.set('Access-Control-Max-Age', '31536000');
 	ctx.body = { links };
 });
 
 router.get(webFingerPath, async ctx => {
+	ctx.set('Access-Control-Allow-Methods', 'GET');
+	ctx.set('Access-Control-Allow-Origin', '*');
+	ctx.set('Access-Control-Max-Age', '31536000');
+
 	const fromId = (id: User['id']): Record<string, any> => ({
 		id,
 		host: null
