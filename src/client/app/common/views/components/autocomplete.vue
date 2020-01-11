@@ -1,12 +1,15 @@
 <template>
 <div class="mk-autocomplete" @contextmenu.prevent="() => {}">
-	<ol class="users" ref="suggests" v-if="users.length > 0">
-		<li v-for="user in users" @click="complete(type, user)" @keydown="onKeydown" tabindex="-1">
+	<ol class="users" ref="suggests" v-if="type === 'user'">
+		<li v-for="user in users" @click="complete(type, user)" @keydown="onKeydown" tabindex="-1" class="user">
 			<img class="avatar" :src="user.avatarUrl" alt=""/>
 			<span class="name">
 				<mk-user-name :user="user" :key="user.id"/>
 			</span>
 			<span class="username">@{{ user | acct }}</span>
+		</li>
+		<li @click="chooseUser()" @keydown="onKeydown" tabindex="-1" class="choose">
+			{{ $t('choose-user') }}
 		</li>
 	</ol>
 	<ol class="hashtags" ref="suggests" v-if="hashtags.length > 0">
@@ -81,11 +84,11 @@ export default Vue.extend({
 
 		q: {
 			type: String,
-			required: true,
+			required: false,
 		},
 
 		textarea: {
-			type: Object,
+			type: HTMLTextAreaElement,
 			required: true,
 		},
 
@@ -134,24 +137,12 @@ export default Vue.extend({
 	},
 
 	updated() {
-		//#region 位置調整
-		if (this.x + this.$el.offsetWidth > window.innerWidth) {
-			this.$el.style.left = (window.innerWidth - this.$el.offsetWidth) + 'px';
-		} else {
-			this.$el.style.left = this.x + 'px';
-		}
-
-		if (this.y + this.$el.offsetHeight > window.innerHeight) {
-			this.$el.style.top = (this.y - this.$el.offsetHeight) + 'px';
-			this.$el.style.marginTop = '0';
-		} else {
-			this.$el.style.top = this.y + 'px';
-			this.$el.style.marginTop = 'calc(1em + 8px)';
-		}
-		//#endregion
+		this.setPosition();
 	},
 
 	mounted() {
+		this.setPosition();
+
 		//#region Construct Emoji DB
 		const customEmojis = (this.$root.getMetaSync() || { emojis: [] }).emojis || [];
 		const emojiDefinitions: EmojiDef[] = [];
@@ -208,6 +199,22 @@ export default Vue.extend({
 	},
 
 	methods: {
+		setPosition() {
+			if (this.x + this.$el.offsetWidth > window.innerWidth) {
+				this.$el.style.left = (window.innerWidth - this.$el.offsetWidth) + 'px';
+			} else {
+				this.$el.style.left = this.x + 'px';
+			}
+
+			if (this.y + this.$el.offsetHeight > window.innerHeight) {
+				this.$el.style.top = (this.y - this.$el.offsetHeight) + 'px';
+				this.$el.style.marginTop = '0';
+			} else {
+				this.$el.style.top = this.y + 'px';
+				this.$el.style.marginTop = 'calc(1em + 8px)';
+			}
+		},
+
 		exec() {
 			this.select = -1;
 			if (this.$refs.suggests) {
@@ -217,6 +224,12 @@ export default Vue.extend({
 			}
 
 			if (this.type == 'user') {
+				if (this.q == null) {
+					this.users = [];
+					this.fetching = false;
+					return;
+				}
+
 				const cacheKey = `autocomplete:user:${this.q}`;
 				const cache = sessionStorage.getItem(cacheKey);
 				if (cache) {
@@ -358,6 +371,15 @@ export default Vue.extend({
 
 			this.items[this.select].setAttribute('data-selected', 'true');
 			(this.items[this.select] as any).focus();
+		},
+
+		chooseUser() {
+			setTimeout(() => {
+				this.complete('user', {
+					host: null,
+					username: 'test'
+				});
+			}, 2000);
 		}
 	}
 });
@@ -416,7 +438,7 @@ export default Vue.extend({
 				&, *
 					color #fff !important
 
-	> .users > li
+	> .users > li.user
 
 		.avatar
 			min-width 28px
@@ -432,6 +454,9 @@ export default Vue.extend({
 
 		.username
 			color var(--autocompleteItemTextSub)
+
+	> .users > li.choose
+		color var(--autocompleteItemText)
 
 	> .hashtags > li
 
