@@ -1,0 +1,41 @@
+name: Mark stale issues and pull requests
+
+on:
+  schedule:
+  - cron: '0 0 * * *'
+
+jobs:
+  stale:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/github-script@0.9.0
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          const { data } = await github.pulls.list({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            state: 'open',
+          })
+          
+          await Promise.all(data
+            .filter(({
+              author_association,
+              base,
+              head,
+              title,
+            }) =>
+              base.user.login === context.repo.owner &&
+              ['OWNER', 'COLLABORATOR', 'MEMBER'].includes(author_association) &&
+              head.label.startsWith(`${base.user.login}:patch/autogen/`) &&
+              !/WIP/i.test(title)))
+            .map(({
+              number,
+            }) =>
+              github.pulls.merge({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: number,
+              })))
