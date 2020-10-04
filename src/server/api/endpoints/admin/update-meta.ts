@@ -691,7 +691,7 @@ export default define(meta, async (ps, me) => {
 		if (meta) {
 			await transactionalEntityManager.update(Meta, meta.id, set);
 		} else {
-			await transactionalEntityManager.save(Meta, set);
+			await transactionalEntityManager.insert(Meta, set);
 		}
 	});
 

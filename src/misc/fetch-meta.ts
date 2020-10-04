@@ -18,9 +18,9 @@ export async function fetchMeta(noCache = false): Promise<Meta> {
 			cache = meta;
 			return meta;
 		} else {
-			const saved = await transactionalEntityManager.save(Meta, {
+			const saved = await transactionalEntityManager.insert(Meta, {
 				id: 'x'
-			}) as Meta;
+			}).then(x => transactionalEntityManager.findOneOrFail(Meta, x.identifiers[0]));
 
 			cache = saved;
 			return saved;

@@ -33,13 +33,13 @@ export default async (user: User, note: Note, reaction?: string) => {
 	}
 
 	// Create reaction
-	const inserted = await NoteReactions.save({
+	const inserted = await NoteReactions.insert({
 		id: genId(),
 		createdAt: new Date(),
 		noteId: note.id,
 		userId: user.id,
 		reaction
-	});
+	}).then(x => NoteReactions.findOneOrFail(x.identifiers[0]));
 
 	// Increment reactions count
 	const sql = `jsonb_set("reactions", '{${reaction}}', (COALESCE("reactions"->>'${reaction}', '0')::int + 1)::text::jsonb)`;

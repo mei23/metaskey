@@ -67,7 +67,7 @@ export async function signup(username: User['username'], password: UserProfile['
 
 		if (exist) throw new Error(' the username is already used');
 
-		account = await transactionalEntityManager.save(new User({
+		account = await transactionalEntityManager.insert(User,{
 			id: genId(),
 			createdAt: new Date(),
 			username: username,
@@ -77,24 +77,24 @@ export async function signup(username: User['username'], password: UserProfile['
 			isAdmin: (await Users.count({
 				host: null,
 			})) === 0,
-		}));
+		}).then(x => transactionalEntityManager.findOneOrFail(User, x.identifiers[0]));
 
-		await transactionalEntityManager.save(new UserKeypair({
+		await transactionalEntityManager.insert(UserKeypair, {
 			publicKey: keyPair[0],
 			privateKey: keyPair[1],
 			userId: account.id
-		}));
+		});
 
-		await transactionalEntityManager.save(new UserProfile({
+		await transactionalEntityManager.insert(UserProfile, {
 			userId: account.id,
 			autoAcceptFollowed: true,
 			password: hash,
-		}));
+		});
 
-		await transactionalEntityManager.save(new UsedUsername({
+		await transactionalEntityManager.insert(UsedUsername, {
 			createdAt: new Date(),
 			username: username.toLowerCase(),
-		}));
+		});
 	});
 
 	usersChart.update(account, true);
