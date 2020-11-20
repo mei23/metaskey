@@ -38,6 +38,8 @@ export const defaultDeviceUserSettings = {
 		'-',
 		'ui',
 	],
+	windows: [],
+	sideView: null,
 	deck: {
 		columns: [],
 		layout: [],
