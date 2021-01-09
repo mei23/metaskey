@@ -1,0 +1,10 @@
+description: "インスタンスのメタ情報を取得します。"
+
+params:
+  detail: "追加情報を含めるか否か"
+
+res:
+  version: "Misskeyのバージョン"
+  announcements: "お知らせ"
+  announcements.title: "タイトル"
+  announcements.text: "本文"

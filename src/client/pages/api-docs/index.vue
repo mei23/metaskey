@@ -3,13 +3,8 @@
 	<main class="_section">
 		<div class="_content">
 			<ul>
-				<li v-for="doc in docs" :key="doc.path">
-					<MkA :to="`/docs/${doc.path}`">{{ doc.title }}</MkA>
-				</li>
-			</ul>
-			<ul>
-				<li>
-					<MkA :to="`/api-docs`">API reference</MkA>
+				<li v-for="endpoint in endpoints" :key="endpoint">
+					<MkA :to="`/api-docs/endpoints/${endpoint}`">{{ endpoint }}</MkA>
 				</li>
 			</ul>
 		</div>
@@ -21,22 +16,23 @@
 import { defineComponent } from 'vue';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
 import { url, lang } from '@/config';
+import * as os from '@/os';
 
 export default defineComponent({
 	data() {
 		return {
 			INFO: {
-				title: this.$ts.help,
+				title: 'Misskey API',
 				icon: faQuestionCircle
 			},
-			docs: [],
+			endpoints: [],
 			faQuestionCircle
 		}
 	},
 
 	created() {
-		fetch(`${url}/docs.json?lang=${lang}`).then(res => res.json()).then(docs => {
-			this.docs = docs;
+		os.api('endpoints').then(endpoints => {
+			this.endpoints = endpoints;
 		});
 	},
 });

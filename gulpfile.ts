@@ -60,7 +60,14 @@ gulp.task('build:client:style', () => {
 		.pipe(gulp.dest('./built/server/web/'));
 });
 
-gulp.task('build:copy', gulp.parallel('build:copy:locales', 'build:copy:views', 'build:client:script', 'build:client:style', 'build:copy:fonts', () =>
+gulp.task('copy:api-docs', () =>
+		gulp.src([
+			'./src/api-docs/**/*',
+		])
+		.pipe(gulp.dest('./built/api-docs/'))
+);
+
+gulp.task('build:copy', gulp.parallel('build:copy:locales', 'copy:api-docs', 'build:copy:views', 'build:client:script', 'build:client:style', 'build:copy:fonts', () =>
 	gulp.src([
 		'./src/emojilist.json',
 		'./src/server/web/views/**/*',

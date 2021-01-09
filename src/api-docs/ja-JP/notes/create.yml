@@ -1,0 +1,7 @@
+description: "ノートを作成します。"
+
+params:
+  visibility: "ノートの公開範囲"
+
+res:
+  createdNote: "作成したノート"

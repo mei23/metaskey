@@ -5,3 +5,6 @@ files:
   - source: /src/docs/ja-JP/*.md
     translation: /src/docs/%locale%/%original_file_name%
     update_option: update_as_unapproved
+  - source: /src/api-docs/ja-JP/**/*.yml
+    translation: /src/api-docs/%locale%/**/%original_file_name%
+    update_option: update_as_unapproved
