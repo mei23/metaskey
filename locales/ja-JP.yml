@@ -1568,3 +1568,6 @@ _deck:
     list: "リスト"
     mentions: "あなた宛て"
     direct: "ダイレクト"
+
+_apiDoc:
+  accessTokenRequired: "アクセストークンが必要です"
