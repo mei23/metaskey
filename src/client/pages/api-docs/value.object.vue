@@ -1,8 +1,13 @@
 <template>
 <div class="jhpkzgfz">
-	<div class="kv" v-for="kv in kvs" :key="kv[0]">
-		<div class="k _monospace">{{ kv[0] }}</div>
-		<XValue class="v" :value="kv[1]" :schemas="schemas"/>
+	<div class="empty" v-if="kvs.length === 0">
+		No fields
+	</div>
+	<div class="kvs" v-else>
+		<div class="kv" v-for="kv in kvs" :key="kv[0]">
+			<div class="k _monospace">{{ kv[0] }}</div>
+			<XValue class="v" :value="kv[1]" :schemas="schemas"/>
+		</div>
 	</div>
 </div>
 </template>
@@ -48,23 +53,25 @@ export default defineComponent({
 	border-radius: 4px;
 	padding: 16px;
 
-	> .kv {
-		display: flex;
+	> .kvs {
+		> .kv {
+			display: flex;
 
-		&:not(:first-child) {
-			margin-top: 16px;
-			padding-top: 16px;
-			border-top: solid 1px var(--divider);
-		}
+			&:not(:first-child) {
+				margin-top: 16px;
+				padding-top: 16px;
+				border-top: solid 1px var(--divider);
+			}
 
-		> .k {
-			font-weight: bold;
-			margin-right: 1em;
-			min-width: 8em;
-		}
+			> .k {
+				font-weight: bold;
+				margin-right: 1em;
+				min-width: 8em;
+			}
 
-		> .v {
-			flex: 1;
+			> .v {
+				flex: 1;
+			}
 		}
 	}
 }
