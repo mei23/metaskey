@@ -28,6 +28,8 @@ export const router = createRouter({
 		{ path: '/about-misskey', component: page('about-misskey') },
 		{ path: '/featured', component: page('featured') },
 		{ path: '/docs', component: page('docs') },
+		{ path: '/theme-editor', component: page('theme-editor') },
+		{ path: '/advanced-theme-editor', component: page('advanced-theme-editor') },
 		{ path: '/docs/:doc', component: page('doc'), props: route => ({ doc: route.params.doc }) },
 		{ path: '/api-docs', component: page('api-docs/index') },
 		{ path: '/api-docs/endpoints/:endpoint(.*)', component: page('api-docs/endpoint'), props: route => ({ endpoint: route.params.endpoint }) },
