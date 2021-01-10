@@ -2,7 +2,7 @@
 <div class="">
 	Array of
 	<div class="">
-		<XValue class="kv _vMargin _shadow" :value="array" :schemas="schemas"/>
+		<XValue class="" :value="array" :schemas="schemas"/>
 	</div>
 </div>
 </template>

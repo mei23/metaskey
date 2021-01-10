@@ -1,7 +1,8 @@
 <template>
 <div class="jhpkzgfz">
-	<div class="kvs">
-		<XValue v-for="kv in kvs" :key="kv[0]" class="kv _vMargin _shadow" :name="kv[0]" :value="kv[1]" :schemas="schemas"/>
+	<div class="kv" v-for="kv in kvs" :key="kv[0]">
+		<div class="k _monospace">{{ kv[0] }}</div>
+		<XValue class="v" :value="kv[1]" :schemas="schemas"/>
 	</div>
 </div>
 </template>
@@ -43,16 +44,27 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .jhpkzgfz {
-	> .kvs {
+	border: solid 1px var(--divider);
+	border-radius: 4px;
+	padding: 16px;
 
-		> .kv {
-			::v-deep(.k) {
-				font-weight: bold;
-			}
+	> .kv {
+		display: flex;
 
-			::v-deep(.v) {
-				padding: 16px;
-			}
+		&:not(:first-child) {
+			margin-top: 16px;
+			padding-top: 16px;
+			border-top: solid 1px var(--divider);
+		}
+
+		> .k {
+			font-weight: bold;
+			margin-right: 1em;
+			min-width: 8em;
+		}
+
+		> .v {
+			flex: 1;
 		}
 	}
 }

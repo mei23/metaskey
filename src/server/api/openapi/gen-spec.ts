@@ -8,7 +8,15 @@ import { schemas, convertSchemaToOpenApiSchema } from './schemas';
 import { getDescription } from './description';
 
 export function genOpenapiSpecForEndpoint(endpoint: IEndpoint, lang = 'ja-JP') {
-	const locale = yaml.safeLoad(fs.readFileSync(__dirname + `/../../../api-docs/${lang}/` + endpoint.name + '.yml', 'utf-8'));
+	let locale;
+
+	try {
+		locale = yaml.safeLoad(fs.readFileSync(__dirname + `/../../../api-docs/${lang}/` + endpoint.name + '.yml', 'utf-8'));
+	} catch (e) {
+		locale = {
+			params: {}
+		};
+	}
 
 	function genProps(props: { [key: string]: Context; }) {
 		const properties = {} as any;

@@ -13,7 +13,7 @@
 			<h2>Response</h2>
 			<section v-for="status in Object.keys(ep.spec.responses)" :key="status">
 				<h3>{{ status }}</h3>
-				<XValue :value="ep.spec.responses[status].content['application/json'].schema" :schemas="ep.schemas"/>
+				<XValue v-if="ep.spec.responses[status].content" :value="ep.spec.responses[status].content['application/json'].schema" :schemas="ep.schemas"/>
 			</section>
 		</section>
 		<section class="raw">

@@ -1,18 +1,17 @@
 <template>
-<MkContainer :body-togglable="true" class="ezkosiua">
-	<template #header>
-		<div class="header _monospace">
-			<span class="name">{{ name }}</span>
-			<span class="type">{{ type }}</span>
-		</div>
-	</template>
+<div class="ezkosiua">
+	<div class="header _monospace">
+		<span v-if="value.$ref" class="ref">
+			<button class="_textButton" @click="resolveRef = true">
+				{{ value.$ref.replace('#/components/schemas/', '') }}
+			</button>
+		</span>
+		<span class="type">{{ type }}</span>
+	</div>
 	<div class="body">
 		<div class="description">{{ value.description }}</div>
 
 		<div v-if="value.$ref" class="ref">
-			<button class="_textButton" @click="resolveRef = true">
-				{{ value.$ref.replace('#/components/schemas/', '') }}
-			</button>
 			<div v-if="resolveRef">
 				<XValue :value="schemas[value.$ref.replace('#/components/schemas/', '')]" :schemas="schemas"/>
 			</div>
@@ -29,7 +28,7 @@
 			unknown
 		</div>
 	</div>
-</MkContainer>
+</div>
 </template>
 
 <script lang="ts">
@@ -62,10 +61,6 @@ export default defineComponent({
 			type: Object,
 			required: true
 		},
-		name: {
-			type: String,
-			required: false
-		},
 	},
 
 	data() {
@@ -82,14 +77,9 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .ezkosiua {
-	::v-deep(.header) {
-		> .name {
-			font-weight: bold;
-			margin-right: 1em;
-
-			&:empty {
-				display: none;
-			}
+	> .header {
+		> .ref {
+			margin-right: 8px;
 		}
 
 		> .type {
@@ -99,8 +89,8 @@ export default defineComponent({
 		}
 	}
 
-	::v-deep(.body) {
-		padding: 16px;
+	> .body {
+		margin-top: 8px;
 	}
 }
 </style>
