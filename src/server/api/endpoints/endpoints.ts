@@ -11,5 +11,8 @@ export const meta = {
 };
 
 export default define(meta, async () => {
-	return endpoints.map(x => x.name);
+	return endpoints.map(x => ({
+		name: x.name,
+		tags: x.meta.tags,
+	}));
 });

@@ -58,7 +58,7 @@ export default defineComponent({
 
 	created() {
 		os.api('endpoints').then(endpoints => {
-			this.endpoints = endpoints;
+			this.endpoints = endpoints.map(x => x.name);
 		});
 	},
 

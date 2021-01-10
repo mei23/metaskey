@@ -1,14 +1,16 @@
 <template>
-<div>
-	<main class="_section">
-		<div class="_content">
-			<ul>
-				<li v-for="endpoint in endpoints" :key="endpoint">
-					<MkA :to="`/api-docs/endpoints/${endpoint}`">{{ endpoint }}</MkA>
-				</li>
-			</ul>
-		</div>
-	</main>
+<div class="smzyuecx">
+	<div class="tags">
+		<button v-for="tag in tags" :key="tag" class="tag _button">
+			{{ tag }}
+		</button>
+	</div>
+
+	<ul>
+		<li v-for="endpoint in endpoints" :key="endpoint.name">
+			<MkA :to="`/api-docs/endpoints/${endpoint.name}`">{{ endpoint.name }}</MkA>
+		</li>
+	</ul>
 </div>
 </template>
 
@@ -26,6 +28,7 @@ export default defineComponent({
 				icon: faQuestionCircle
 			},
 			endpoints: [],
+			tags: [],
 			faQuestionCircle
 		}
 	},
@@ -33,7 +36,32 @@ export default defineComponent({
 	created() {
 		os.api('endpoints').then(endpoints => {
 			this.endpoints = endpoints;
+
+			const tags = new Set();
+			for (const endpoint of this.endpoints) {
+				if (endpoint.tags) {
+					for (const tag of endpoint.tags) {
+						tags.add(tag);
+					}
+				}
+			}
+
+			this.tags = Array.from(tags);
 		});
 	},
 });
 </script>
+
+<style lang="scss" scoped>
+.smzyuecx {
+	> .tags {
+		> .tag {
+			display: inline-block;
+			border: solid 1px var(--divider);
+			border-radius: 6px;
+			padding: 12px 16px;
+			margin: 8px;
+		}
+	} 
+}
+</style>
