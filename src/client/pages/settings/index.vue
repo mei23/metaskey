@@ -6,6 +6,7 @@
 			<FormLink :active="page === 'profile'" replace to="/settings/profile"><template #icon><Fa :icon="faUser"/></template>{{ $ts.profile }}</FormLink>
 			<FormLink :active="page === 'privacy'" replace to="/settings/privacy"><template #icon><Fa :icon="faLockOpen"/></template>{{ $ts.privacy }}</FormLink>
 			<FormLink :active="page === 'reaction'" replace to="/settings/reaction"><template #icon><Fa :icon="faLaugh"/></template>{{ $ts.reaction }}</FormLink>
+			<FormLink :active="page === 'drive'" replace to="/settings/drive"><template #icon><Fa :icon="faCloud"/></template>{{ $ts.drive }}</FormLink>
 			<FormLink :active="page === 'notifications'" replace to="/settings/notifications"><template #icon><Fa :icon="faBell"/></template>{{ $ts.notifications }}</FormLink>
 			<FormLink :active="page === 'email'" replace to="/settings/email"><template #icon><Fa :icon="faEnvelope"/></template>{{ $ts.email }}</FormLink>
 			<FormLink :active="page === 'integration'" replace to="/settings/integration"><template #icon><Fa :icon="faShareAlt"/></template>{{ $ts.integration }}</FormLink>
@@ -35,14 +36,14 @@
 		</FormGroup>
 	</FormBase>
 	<div class="main">
-		<component :is="component" @info="onInfo"/>
+		<component :is="component" :key="page" @info="onInfo" v-bind="pageProps"/>
 	</div>
 </div>
 </template>
 
 <script lang="ts">
-import { computed, defineAsyncComponent, defineComponent, nextTick, onMounted, ref, watch } from 'vue';
-import { faCog, faPalette, faPlug, faUser, faListUl, faLock, faCommentSlash, faMusic, faCogs, faEllipsisH, faBan, faShareAlt, faLockOpen, faKey, faBoxes } from '@fortawesome/free-solid-svg-icons';
+import { computed, defineAsyncComponent, defineComponent, nextTick, onMounted, reactive, ref, watch } from 'vue';
+import { faCog, faPalette, faPlug, faUser, faListUl, faLock, faCommentSlash, faMusic, faCogs, faEllipsisH, faBan, faShareAlt, faLockOpen, faKey, faBoxes, faCloud } from '@fortawesome/free-solid-svg-icons';
 import { faLaugh, faBell, faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { i18n } from '@/i18n';
 import FormLink from '@/components/form/link.vue';
@@ -78,11 +79,14 @@ export default defineComponent({
 		const onInfo = (viewInfo) => {
 			INFO.value = viewInfo;
 		};
+		const pageProps = ref({});
 		const component = computed(() => {
+			if (props.page == null) return null;
 			switch (props.page) {
 				case 'profile': return defineAsyncComponent(() => import('./profile.vue'));
 				case 'privacy': return defineAsyncComponent(() => import('./privacy.vue'));
 				case 'reaction': return defineAsyncComponent(() => import('./reaction.vue'));
+				case 'drive': return defineAsyncComponent(() => import('./drive.vue'));
 				case 'notifications': return defineAsyncComponent(() => import('./notifications.vue'));
 				case 'mute-block': return defineAsyncComponent(() => import('./mute-block.vue'));
 				case 'word-mute': return defineAsyncComponent(() => import('./word-mute.vue'));
@@ -104,16 +108,36 @@ export default defineComponent({
 				case 'plugins': return defineAsyncComponent(() => import('./plugins.vue'));
 				case 'import-export': return defineAsyncComponent(() => import('./import-export.vue'));
 				case 'account-info': return defineAsyncComponent(() => import('./account-info.vue'));
+				case 'update': return defineAsyncComponent(() => import('./update.vue'));
+				case 'registry': return defineAsyncComponent(() => import('./registry.vue'));
 				case 'experimental-features': return defineAsyncComponent(() => import('./experimental-features.vue'));
-				default: return null;
+			}
+			if (props.page.startsWith('registry/keys/system/')) {
+				return defineAsyncComponent(() => import('./registry.keys.vue'));
+			}
+			if (props.page.startsWith('registry/value/system/')) {
+				return defineAsyncComponent(() => import('./registry.value.vue'));
 			}
 		});
 
 		watch(component, () => {
+			pageProps.value = {};
+
+			if (props.page) {
+				if (props.page.startsWith('registry/keys/system/')) {
+					pageProps.value.scope = props.page.replace('registry/keys/system/', '').split('/');
+				}
+				if (props.page.startsWith('registry/value/system/')) {
+					const path = props.page.replace('registry/value/system/', '').split('/');
+					pageProps.value.xKey = path.pop();
+					pageProps.value.scope = path;
+				}
+			}
+
 			nextTick(() => {
 				scroll(el.value, 0);
 			});
-		});
+		}, { immediate: true });
 
 		onMounted(() => {
 			narrow.value = el.value.offsetWidth < 1025;
@@ -125,6 +149,7 @@ export default defineComponent({
 			view,
 			el,
 			onInfo,
+			pageProps,
 			component,
 			logout: () => {
 				signout();
@@ -134,7 +159,7 @@ export default defineComponent({
 				localStorage.removeItem('theme');
 				location.reload();
 			},
-			faPalette, faPlug, faUser, faListUl, faLock, faLaugh, faCommentSlash, faMusic, faBell, faCogs, faEllipsisH, faBan, faShareAlt, faLockOpen, faKey, faBoxes, faEnvelope,
+			faPalette, faPlug, faUser, faListUl, faLock, faLaugh, faCommentSlash, faMusic, faBell, faCogs, faEllipsisH, faBan, faShareAlt, faLockOpen, faKey, faBoxes, faEnvelope, faCloud,
 		};
 	},
 });

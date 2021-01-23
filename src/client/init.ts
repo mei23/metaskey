@@ -56,10 +56,9 @@ import { defaultStore, ColdDeviceStorage } from '@/store';
 import { fetchInstance, instance } from '@/instance';
 import { makeHotkey } from './scripts/hotkey';
 import { search } from './scripts/search';
+import { getThemes } from './theme-store';
 
 console.info(`Misskey v${version}`);
-
-window.clearTimeout((window as any).mkBootTimer);
 
 if (_DEV_) {
 	console.warn('Development mode!!!');
@@ -169,6 +168,8 @@ if ($i && $i.token) {
 //#endregion
 
 fetchInstance().then(() => {
+	localStorage.setItem('v', instance.version);
+
 	// Init service worker
 	//if (this.store.state.instance.meta.swPublickey) this.registerSw(this.store.state.instance.meta.swPublickey);
 });
@@ -211,7 +212,7 @@ app.mount('body');
 
 watch(defaultStore.reactiveState.darkMode, (darkMode) => {
 	import('@/scripts/theme').then(({ builtinThemes }) => {
-		const themes = builtinThemes.concat(ColdDeviceStorage.get('themes'));
+		const themes = builtinThemes.concat(getThemes());
 		applyTheme(themes.find(x => x.id === (darkMode ? ColdDeviceStorage.get('darkTheme') : ColdDeviceStorage.get('lightTheme'))));
 	});
 }, { immediate: localStorage.theme == null });
@@ -345,14 +346,6 @@ if ($i) {
 
 	main.on('readAllAnnouncements', () => {
 		updateAccount({ hasUnreadAnnouncement: false });
-	});
-
-	main.on('clientSettingUpdated', x => {
-		updateAccount({
-			clientData: {
-				[x.key]: x.value
-			}
-		});
 	});
 
 	// トークンが再生成されたとき
