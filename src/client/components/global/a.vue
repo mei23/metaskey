@@ -9,7 +9,7 @@ import { defineComponent } from 'vue';
 import { faExpandAlt, faColumns, faExternalLinkAlt, faLink, faWindowMaximize } from '@fortawesome/free-solid-svg-icons';
 import * as os from '@client/os';
 import copyToClipboard from '@client/scripts/copy-to-clipboard';
-import { router } from '@client/router';
+import { router, setNavigationInfo } from '@client/router';
 import { url } from '@client/config';
 import { popout } from '@client/scripts/popout';
 import { ColdDeviceStorage } from '@client/store';
@@ -130,6 +130,10 @@ export default defineComponent({
 				if (this.$router.currentRoute.value.path === this.to) {
 					window.scroll({ top: 0, behavior: 'smooth' });
 				} else {
+					setNavigationInfo({
+						from: this.$router.currentRoute.value.path,
+						to: this.to
+					});
 					this.$router.push(this.to);
 				}
 			}

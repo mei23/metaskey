@@ -1,4 +1,4 @@
-import { defineAsyncComponent, markRaw } from 'vue';
+import { defineAsyncComponent, markRaw, ref } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
 import MkLoading from '@client/pages/_loading_.vue';
 import MkError from '@client/pages/_error_.vue';
@@ -12,6 +12,16 @@ const page = (path: string) => defineAsyncComponent({
 });
 
 let indexScrollPos = 0;
+
+export const navigationInfo = ref(null);
+export function setNavigationInfo(info) {
+	navigationInfo.value = info;
+}
+
+window.addEventListener('popstate', (event) => {
+	console.log('popstate');
+	navigationInfo.value = null;
+});
 
 export const router = createRouter({
 	history: createWebHistory(),
@@ -88,7 +98,7 @@ export const router = createRouter({
 	// 通常の使い方をすると scroll メソッドの behavior を設定できないため、自前で window.scroll するようにする
 	scrollBehavior(to) {
 		window._scroll = () => { // さらにHacky
-			if (to.name === 'index') {
+			if (location.pathname === '/') {
 				window.scroll({ top: indexScrollPos, behavior: 'instant' });
 				const i = setInterval(() => {
 					window.scroll({ top: indexScrollPos, behavior: 'instant' });
@@ -103,11 +113,11 @@ export const router = createRouter({
 	}
 });
 
-router.afterEach((to, from) => {
-	if (from.name === 'index') {
+export function saveScrollPosition() {
+	if (navigationInfo.value?.from === '/') {
 		indexScrollPos = window.scrollY;
 	}
-});
+}
 
 export function resolve(path: string) {
 	const resolved = router.resolve(path);

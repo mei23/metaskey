@@ -11,7 +11,7 @@
 			</header>
 			<div class="content" :class="{ _flat_: !fullView }">
 				<router-view v-slot="{ Component }">
-					<transition :name="$store.state.animation ? 'page' : ''" mode="out-in" @enter="onTransition">
+					<transition :name="$store.state.animation && navigationInfo ? 'page' : ''" @before-enter="saveScrollPosition" @enter="onTransition">
 						<keep-alive :include="['timeline']">
 							<component :is="Component" :ref="changePage"/>
 						</keep-alive>
@@ -64,6 +64,7 @@ import XHeader from './_common_/header.vue';
 import * as os from '@client/os';
 import { sidebarDef } from '@client/sidebar';
 import * as symbols from '@client/symbols';
+import { saveScrollPosition, navigationInfo } from '@client/router';
 
 const DESKTOP_THRESHOLD = 1100;
 const MOBILE_THRESHOLD = 600;
@@ -85,6 +86,7 @@ export default defineComponent({
 			isDesktop: window.innerWidth >= DESKTOP_THRESHOLD,
 			widgetsShowing: false,
 			fullView: false,
+			navigationInfo,
 			wallpaper: localStorage.getItem('wallpaper') != null,
 			faLayerGroup, faBars, faBell, faHome, faCircle, faPencilAlt,
 		};
@@ -152,6 +154,10 @@ export default defineComponent({
 			this.$refs.drawerNav.show();
 		},
 
+		saveScrollPosition() {
+			saveScrollPosition();
+		},
+
 		onTransition() {
 			if (window._scroll) window._scroll();
 		},
@@ -213,6 +219,39 @@ export default defineComponent({
 .tray-back-enter-from,
 .tray-back-leave-active {
 	opacity: 0;
+}
+
+.page-enter-active {
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	width: 100%;
+	opacity: 1;
+	transform: translateX(0);
+	transition: transform 500ms cubic-bezier(0.23, 1, 0.32, 1), opacity 500ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.page-leave-active {
+	opacity: 1;
+	transform: translateX(0);
+	transition: transform 500ms cubic-bezier(0.23, 1, 0.32, 1), opacity 500ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.page-enter-from {
+	//opacity: 0;
+	transform: translateX(128px);
+
+	/* iOSはoverflow: clipをサポートしていない */ 
+	@supports (-webkit-touch-callout: none) {
+		transform: translateX(0);
+	}
+}
+.page-leave-active {
+	opacity: 0;
+	transform: translateX(-64px);
+
+	/* iOSはoverflow: clipをサポートしていない */ 
+	@supports (-webkit-touch-callout: none) {
+		transform: translateX(0);
+	}
 }
 
 .mk-app {
@@ -294,6 +333,7 @@ export default defineComponent({
 			}
 
 			> .content {
+				position: relative;
 				background: var(--bg);
 				--stickyTop: #{$header-height};
 			}
