@@ -10,7 +10,7 @@
 	</FormGroup>
 
 	<FormLink to="/settings/email/notification">
-		<template #icon><Fa :icon="faBell"/></template>
+		<template #icon><span class="_i round">notifications</span></template>
 		{{ $ts.emailNotification }}
 	</FormLink>
 

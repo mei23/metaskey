@@ -6,10 +6,10 @@
 >
 	<template v-if="!wait">
 		<template v-if="isFollowing">
-			<span v-if="full">{{ $ts.unfollow }}</span><Fa :icon="faMinus"/>
+			<span v-if="full">{{ $ts.unfollow }}</span><span class="_i round">remove</span>
 		</template>
 		<template v-else>
-			<span v-if="full">{{ $ts.follow }}</span><Fa :icon="faPlus"/>
+			<span v-if="full">{{ $ts.follow }}</span><span class="_i round">add</span>
 		</template>
 	</template>
 	<template v-else>

@@ -1,6 +1,6 @@
 <template>
 <div class="yweeujhr _root" v-size="{ max: [400] }">
-	<MkButton @click="start" primary class="start"><Fa :icon="faPlus"/> {{ $ts.startMessaging }}</MkButton>
+	<MkButton @click="start" primary class="start"><span class="_i round">add</span> {{ $ts.startMessaging }}</MkButton>
 
 	<div class="history" v-if="messages.length > 0">
 		<MkA v-for="(message, i) in messages"

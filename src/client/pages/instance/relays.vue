@@ -1,12 +1,12 @@
 <template>
 <div class="relaycxt">
 	<section class="_section add">
-		<div class="_title"><Fa :icon="faPlus"/> {{ $ts.addRelay }}</div>
+		<div class="_title"><span class="_i round">add</span> {{ $ts.addRelay }}</div>
 		<div class="_content">
 			<MkInput v-model:value="inbox">
 				<span>{{ $ts.inboxUrl }}</span>
 			</MkInput>
-			<MkButton @click="add(inbox)" primary><Fa :icon="faPlus"/> {{ $ts.add }}</MkButton>
+			<MkButton @click="add(inbox)" primary><span class="_i round">add</span> {{ $ts.add }}</MkButton>
 		</div>
 	</section>
 

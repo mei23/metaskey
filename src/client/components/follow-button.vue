@@ -12,13 +12,13 @@
 			<span v-if="full">{{ $ts.processing }}</span><Fa :icon="faSpinner" pulse/>
 		</template>
 		<template v-else-if="isFollowing">
-			<span v-if="full">{{ $ts.unfollow }}</span><Fa :icon="faMinus"/>
+			<span v-if="full">{{ $ts.unfollow }}</span><span class="_i round">remove</span>
 		</template>
 		<template v-else-if="!isFollowing && user.isLocked">
-			<span v-if="full">{{ $ts.followRequest }}</span><Fa :icon="faPlus"/>
+			<span v-if="full">{{ $ts.followRequest }}</span><span class="_i round">add</span>
 		</template>
 		<template v-else-if="!isFollowing && !user.isLocked">
-			<span v-if="full">{{ $ts.follow }}</span><Fa :icon="faPlus"/>
+			<span v-if="full">{{ $ts.follow }}</span><span class="_i round">add</span>
 		</template>
 	</template>
 	<template v-else>

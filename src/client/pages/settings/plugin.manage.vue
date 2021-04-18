@@ -22,7 +22,7 @@
 		</div>
 		<div class="_formItem">
 			<div class="_formPanel" style="padding: 16px;">
-				<MkButton @click="config(plugin)" inline v-if="plugin.config"><Fa :icon="faCog"/> {{ $ts.settings }}</MkButton>
+				<MkButton @click="config(plugin)" inline v-if="plugin.config"><span class="_i round">settings</span> {{ $ts.settings }}</MkButton>
 				<MkButton @click="uninstall(plugin)" inline danger><Fa :icon="faTrashAlt"/> {{ $ts.uninstall }}</MkButton>
 			</div>
 		</div>

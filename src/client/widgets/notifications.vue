@@ -1,7 +1,7 @@
 <template>
 <MkContainer :style="`height: ${props.height}px;`" :show-header="props.showHeader" :scrollable="true">
-	<template #header><Fa :icon="faBell"/>{{ $ts.notifications }}</template>
-	<template #func><button @click="configure()" class="_button"><Fa :icon="faCog"/></button></template>
+	<template #header><span class="_i round">notifications</span>{{ $ts.notifications }}</template>
+	<template #func><button @click="configure()" class="_button"><span class="_i round">settings</span></button></template>
 
 	<div class="_flat_">
 		<XNotifications :include-types="props.includingTypes"/>

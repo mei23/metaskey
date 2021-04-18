@@ -253,6 +253,28 @@ hr {
 	margin: var(--margin) 0;
 }
 
+._i {
+	font-family: 'Material Icons';
+
+	&.round {
+		font-family: 'Material Icons Round';
+	}
+
+	font-weight: normal;
+	font-style: normal;
+	font-size: 130%;
+	line-height: 1;
+	letter-spacing: normal;
+	text-transform: none;
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: normal;
+	vertical-align: middle;
+	direction: ltr;
+	-webkit-font-feature-settings: 'liga';
+	-webkit-font-smoothing: antialiased;
+}
+
 ._card {
 	@extend ._panel;
 

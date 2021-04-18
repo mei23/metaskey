@@ -9,7 +9,7 @@
 
 	<div class="_section">
 		<div class="local" v-if="tab === 'local'">
-			<MkButton primary @click="add" style="margin: 0 auto var(--margin) auto;"><Fa :icon="faPlus"/> {{ $ts.addEmoji }}</MkButton>
+			<MkButton primary @click="add" style="margin: 0 auto var(--margin) auto;"><span class="_i round">add</span> {{ $ts.addEmoji }}</MkButton>
 			<MkInput v-model:value="query" :debounce="true" type="search"><template #icon><Fa :icon="faSearch"/></template><span>{{ $ts.search }}</span></MkInput>
 			<MkPagination :pagination="pagination" ref="emojis">
 				<template #empty><span>{{ $ts.noCustomEmojis }}</span></template>

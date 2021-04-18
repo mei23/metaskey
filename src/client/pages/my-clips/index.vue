@@ -1,6 +1,6 @@
 <template>
 <div class="_section qtcaoidl">
-	<MkButton @click="create" primary class="add"><Fa :icon="faPlus"/> {{ $ts.add }}</MkButton>
+	<MkButton @click="create" primary class="add"><span class="_i round">add</span> {{ $ts.add }}</MkButton>
 
 	<div class="_content">
 		<MkPagination :pagination="pagination" #default="{items}" ref="list" class="list">

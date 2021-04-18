@@ -1,7 +1,7 @@
 <template>
 <MkContainer :show-header="props.showHeader">
 	<template #header><Fa :icon="faRssSquare"/>RSS</template>
-	<template #func><button class="_button" @click="setting"><Fa :icon="faCog"/></button></template>
+	<template #func><button class="_button" @click="setting"><span class="_i round">settings</span></button></template>
 
 	<div class="ekmkgxbj">
 		<MkLoading v-if="fetching"/>

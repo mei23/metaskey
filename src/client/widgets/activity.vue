@@ -1,7 +1,7 @@
 <template>
 <MkContainer :show-header="props.showHeader" :naked="props.transparent">
 	<template #header><Fa :icon="faChartBar"/>{{ $ts._widgets.activity }}</template>
-	<template #func><button @click="toggleView()" class="_button"><Fa :icon="faSort"/></button></template>
+	<template #func><button @click="toggleView()" class="_button"><span class="_i round">switch_left</span></button></template>
 
 	<div>
 		<MkLoading v-if="fetching"/>

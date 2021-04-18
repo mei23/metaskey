@@ -9,7 +9,7 @@
 	</div>
 
 	<MkContainer :foldable="true" :expanded="true" class="_gap">
-		<template #header><Fa :icon="faCog"/> {{ $ts._pages.pageSetting }}</template>
+		<template #header><span class="_i round">settings</span> {{ $ts._pages.pageSetting }}</template>
 		<div style="padding: 16px;">
 			<MkInput v-model:value="title">
 				<span>{{ $ts._pages.title }}</span>
@@ -35,7 +35,7 @@
 			<MkSwitch v-model:value="hideTitleWhenPinned">{{ $ts._pages.hideTitleWhenPinned }}</MkSwitch>
 
 			<div class="eyeCatch">
-				<MkButton v-if="eyeCatchingImageId == null && !readonly" @click="setEyeCatchingImage"><Fa :icon="faPlus"/> {{ $ts._pages.eyeCatchingImageSet }}</MkButton>
+				<MkButton v-if="eyeCatchingImageId == null && !readonly" @click="setEyeCatchingImage"><span class="_i round">add</span> {{ $ts._pages.eyeCatchingImageSet }}</MkButton>
 				<div v-else-if="eyeCatchingImage">
 					<img :src="eyeCatchingImage.url" :alt="eyeCatchingImage.name" style="max-width: 100%;"/>
 					<MkButton @click="removeEyeCatchingImage()" v-if="!readonly"><Fa :icon="faTrashAlt"/> {{ $ts._pages.eyeCatchingImageRemove }}</MkButton>
@@ -49,7 +49,7 @@
 		<div style="padding: 16px;">
 			<XBlocks class="content" v-model:value="content" :hpml="hpml"/>
 
-			<MkButton @click="add()" v-if="!readonly"><Fa :icon="faPlus"/></MkButton>
+			<MkButton @click="add()" v-if="!readonly"><span class="_i round">add</span></MkButton>
 		</div>
 	</MkContainer>
 
@@ -70,7 +70,7 @@
 				</template>
 			</XDraggable>
 
-			<MkButton @click="addVariable()" class="add" v-if="!readonly"><Fa :icon="faPlus"/></MkButton>
+			<MkButton @click="addVariable()" class="add" v-if="!readonly"><span class="_i round">add</span></MkButton>
 		</div>
 	</MkContainer>
 

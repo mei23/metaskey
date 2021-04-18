@@ -14,7 +14,7 @@
 		</div>
 
 		<div class="rknalgpo _content my" v-if="tab === 'my'">
-			<MkButton class="new" @click="create()"><Fa :icon="faPlus"/></MkButton>
+			<MkButton class="new" @click="create()"><span class="_i round">add</span></MkButton>
 			<MkPagination :pagination="myPagesPagination" #default="{items}">
 				<MkPagePreview v-for="page in items" class="ckltabjg" :page="page" :key="page.id"/>
 			</MkPagination>

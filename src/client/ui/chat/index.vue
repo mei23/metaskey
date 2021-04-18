@@ -27,25 +27,25 @@
 				</div>
 			</div>
 			<div class="container" v-if="followedChannels">
-				<div class="header">{{ $ts.channel }} ({{ $ts.following }})<button class="_button add" @click="addChannel"><Fa :icon="faPlus"/></button></div>
+				<div class="header">{{ $ts.channel }} ({{ $ts.following }})<button class="_button add" @click="addChannel"><span class="_i round">add</span></button></div>
 				<div class="body">
 					<MkA v-for="channel in followedChannels" :key="channel.id" :to="`/channels/${ channel.id }`" class="item" :class="{ active: tl === `channel:${ channel.id }`, read: !channel.hasUnreadNote }"><Fa :icon="faSatelliteDish" class="icon"/>{{ channel.name }}</MkA>
 				</div>
 			</div>
 			<div class="container" v-if="featuredChannels">
-				<div class="header">{{ $ts.channel }}<button class="_button add" @click="addChannel"><Fa :icon="faPlus"/></button></div>
+				<div class="header">{{ $ts.channel }}<button class="_button add" @click="addChannel"><span class="_i round">add</span></button></div>
 				<div class="body">
 					<MkA v-for="channel in featuredChannels" :key="channel.id" :to="`/channels/${ channel.id }`" class="item" :class="{ active: tl === `channel:${ channel.id }` }"><Fa :icon="faSatelliteDish" class="icon"/>{{ channel.name }}</MkA>
 				</div>
 			</div>
 			<div class="container" v-if="lists">
-				<div class="header">{{ $ts.lists }}<button class="_button add" @click="addList"><Fa :icon="faPlus"/></button></div>
+				<div class="header">{{ $ts.lists }}<button class="_button add" @click="addList"><span class="_i round">add</span></button></div>
 				<div class="body">
 					<MkA v-for="list in lists" :key="list.id" :to="`/my/list/${ list.id }`" class="item" :class="{ active: tl === `list:${ list.id }` }"><Fa :icon="faListUl" class="icon"/>{{ list.name }}</MkA>
 				</div>
 			</div>
 			<div class="container" v-if="antennas">
-				<div class="header">{{ $ts.antennas }}<button class="_button add" @click="addAntenna"><Fa :icon="faPlus"/></button></div>
+				<div class="header">{{ $ts.antennas }}<button class="_button add" @click="addAntenna"><span class="_i round">add</span></button></div>
 				<div class="body">
 					<MkA v-for="antenna in antennas" :key="antenna.id" :to="`/my/antenna/${ antenna.id }`" class="item" :class="{ active: tl === `antenna:${ antenna.id }` }"><Fa :icon="faSatellite" class="icon"/>{{ antenna.name }}</MkA>
 				</div>
@@ -113,7 +113,7 @@
 					<Fa v-else :icon="farStar"/>
 				</button>
 				<button class="_button button menu" v-if="tl.startsWith('channel:') && currentChannel" @click="openChannelMenu">
-					<Fa :icon="faEllipsisH"/>
+					<span class="_i round">more_horiz</span>
 				</button>
 			</div>
 		</header>

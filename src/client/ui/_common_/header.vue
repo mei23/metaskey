@@ -16,7 +16,7 @@
 			<template v-if="info.actions && showActions">
 				<button v-for="action in info.actions" class="_button button" @click.stop="action.handler" v-tooltip="action.text"><Fa :icon="action.icon"/></button>
 			</template>
-			<button v-if="showMenu" class="_button button" @click.stop="menu"><Fa :icon="faEllipsisH"/></button>
+			<button v-if="showMenu" class="_button button" @click.stop="menu"><span class="_i round">more_horiz</span></button>
 		</div>
 	</template>
 </div>

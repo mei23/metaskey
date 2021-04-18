@@ -2,7 +2,7 @@
 <div class="mk-instance-users">
 	<div class="_section">
 		<div class="_content">
-			<MkButton inline primary @click="addUser()"><Fa :icon="faPlus"/> {{ $ts.addUser }}</MkButton>
+			<MkButton inline primary @click="addUser()"><span class="_i round">add</span> {{ $ts.addUser }}</MkButton>
 		</div>
 	</div>
 

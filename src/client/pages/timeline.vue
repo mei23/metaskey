@@ -4,10 +4,10 @@
 	<XPostForm v-if="$store.reactiveState.showFixedPostForm.value" class="post-form _block" fixed/>
 	<div class="tabs _block">
 		<div class="left">
-			<button class="_button tab" @click="() => { src = 'home'; saveSrc(); }" :class="{ active: src === 'home' }" v-tooltip="$ts._timelines.home"><Fa :icon="faHome"/></button>
-			<button class="_button tab" @click="() => { src = 'local'; saveSrc(); }" :class="{ active: src === 'local' }" v-tooltip="$ts._timelines.local" v-if="isLocalTimelineAvailable"><Fa :icon="faComments"/></button>
-			<button class="_button tab" @click="() => { src = 'social'; saveSrc(); }" :class="{ active: src === 'social' }" v-tooltip="$ts._timelines.social" v-if="isLocalTimelineAvailable"><Fa :icon="faShareAlt"/></button>
-			<button class="_button tab" @click="() => { src = 'global'; saveSrc(); }" :class="{ active: src === 'global' }" v-tooltip="$ts._timelines.global" v-if="isGlobalTimelineAvailable"><Fa :icon="faGlobe"/></button>
+			<button class="_button tab" @click="() => { src = 'home'; saveSrc(); }" :class="{ active: src === 'home' }" v-tooltip="$ts._timelines.home"><span class="_i round">home</span></button>
+			<button class="_button tab" @click="() => { src = 'local'; saveSrc(); }" :class="{ active: src === 'local' }" v-tooltip="$ts._timelines.local" v-if="isLocalTimelineAvailable"><span class="_i round">forum</span></button>
+			<button class="_button tab" @click="() => { src = 'social'; saveSrc(); }" :class="{ active: src === 'social' }" v-tooltip="$ts._timelines.social" v-if="isLocalTimelineAvailable"><span class="_i round">share</span></button>
+			<button class="_button tab" @click="() => { src = 'global'; saveSrc(); }" :class="{ active: src === 'global' }" v-tooltip="$ts._timelines.global" v-if="isGlobalTimelineAvailable"><span class="_i round">public</span></button>
 			<span class="divider"></span>
 			<button class="_button tab" @click="() => { src = 'mentions'; saveSrc(); }" :class="{ active: src === 'mentions' }" v-tooltip="$ts.mentions"><Fa :icon="faAt"/><Fa :icon="faCircle" class="i" v-if="$i.hasUnreadMentions"/></button>
 			<button class="_button tab" @click="() => { src = 'directs'; saveSrc(); }" :class="{ active: src === 'directs' }" v-tooltip="$ts.directNotes"><Fa :icon="faEnvelope"/><Fa :icon="faCircle" class="i" v-if="$i.hasUnreadSpecifiedNotes"/></button>

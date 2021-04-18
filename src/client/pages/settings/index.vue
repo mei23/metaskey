@@ -8,7 +8,7 @@
 				<FormLink :active="page === 'privacy'" replace to="/settings/privacy"><template #icon><Fa :icon="faLockOpen"/></template>{{ $ts.privacy }}</FormLink>
 				<FormLink :active="page === 'reaction'" replace to="/settings/reaction"><template #icon><Fa :icon="faLaugh"/></template>{{ $ts.reaction }}</FormLink>
 				<FormLink :active="page === 'drive'" replace to="/settings/drive"><template #icon><Fa :icon="faCloud"/></template>{{ $ts.drive }}</FormLink>
-				<FormLink :active="page === 'notifications'" replace to="/settings/notifications"><template #icon><Fa :icon="faBell"/></template>{{ $ts.notifications }}</FormLink>
+				<FormLink :active="page === 'notifications'" replace to="/settings/notifications"><template #icon><span class="_i round">notifications</span></template>{{ $ts.notifications }}</FormLink>
 				<FormLink :active="page === 'email'" replace to="/settings/email"><template #icon><Fa :icon="faEnvelope"/></template>{{ $ts.email }}</FormLink>
 				<FormLink :active="page === 'integration'" replace to="/settings/integration"><template #icon><Fa :icon="faShareAlt"/></template>{{ $ts.integration }}</FormLink>
 				<FormLink :active="page === 'security'" replace to="/settings/security"><template #icon><Fa :icon="faLock"/></template>{{ $ts.security }}</FormLink>
@@ -27,7 +27,7 @@
 				<FormLink :active="page === 'mute-block'" replace to="/settings/mute-block"><template #icon><Fa :icon="faBan"/></template>{{ $ts.muteAndBlock }}</FormLink>
 				<FormLink :active="page === 'word-mute'" replace to="/settings/word-mute"><template #icon><Fa :icon="faCommentSlash"/></template>{{ $ts.wordMute }}</FormLink>
 				<FormLink :active="page === 'api'" replace to="/settings/api"><template #icon><Fa :icon="faKey"/></template>API</FormLink>
-				<FormLink :active="page === 'other'" replace to="/settings/other"><template #icon><Fa :icon="faEllipsisH"/></template>{{ $ts.other }}</FormLink>
+				<FormLink :active="page === 'other'" replace to="/settings/other"><template #icon><span class="_i round">more_horiz</span></template>{{ $ts.other }}</FormLink>
 			</FormGroup>
 			<FormGroup>
 				<FormButton @click="clear">{{ $ts.clearCache }}</FormButton>
