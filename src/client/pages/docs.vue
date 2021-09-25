@@ -57,7 +57,7 @@ import { defineComponent } from 'vue';
 import { url, lang } from '@client/config';
 import * as symbols from '@client/symbols';
 import MkFolder from '@client/components/ui/folder.vue';
-import MkInput from '@client/components/ui/input.vue';
+import MkInput from '@client/components/form/input.vue';
 
 export default defineComponent({
 	components: {

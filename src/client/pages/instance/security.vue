@@ -17,13 +17,13 @@
 
 <script lang="ts">
 import { defineAsyncComponent, defineComponent } from 'vue';
-import FormLink from '@client/components/form/link.vue';
-import FormSwitch from '@client/components/form/switch.vue';
-import FormButton from '@client/components/form/button.vue';
-import FormBase from '@client/components/form/base.vue';
-import FormGroup from '@client/components/form/group.vue';
-import FormInfo from '@client/components/form/info.vue';
-import FormSuspense from '@client/components/form/suspense.vue';
+import FormLink from '@client/components/debobigego/link.vue';
+import FormSwitch from '@client/components/debobigego/switch.vue';
+import FormButton from '@client/components/debobigego/button.vue';
+import FormBase from '@client/components/debobigego/base.vue';
+import FormGroup from '@client/components/debobigego/group.vue';
+import FormInfo from '@client/components/debobigego/info.vue';
+import FormSuspense from '@client/components/debobigego/suspense.vue';
 import * as os from '@client/os';
 import * as symbols from '@client/symbols';
 import { fetchInstance } from '@client/instance';

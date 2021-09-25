@@ -53,14 +53,14 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import XModalWindow from '@client/components/ui/modal-window.vue';
-import FormBase from './form/base.vue';
-import FormInput from './form/input.vue';
-import FormTextarea from './form/textarea.vue';
-import FormSwitch from './form/switch.vue';
-import FormSelect from './form/select.vue';
-import FormRange from './form/range.vue';
-import FormButton from './form/button.vue';
-import FormRadios from './form/radios.vue';
+import FormBase from './debobigego/base.vue';
+import FormInput from './debobigego/input.vue';
+import FormTextarea from './debobigego/textarea.vue';
+import FormSwitch from './debobigego/switch.vue';
+import FormSelect from './debobigego/select.vue';
+import FormRange from './debobigego/range.vue';
+import FormButton from './debobigego/button.vue';
+import FormRadios from './debobigego/radios.vue';
 
 export default defineComponent({
 	components: {

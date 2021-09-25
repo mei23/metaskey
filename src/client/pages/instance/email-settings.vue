@@ -8,8 +8,8 @@
 				<span>{{ $ts.emailAddress }}</span>
 			</FormInput>
 
-			<div class="_formItem _formNoConcat" v-sticky-container>
-				<div class="_formLabel">{{ $ts.smtpConfig }}</div>
+			<div class="_debobigegoItem _debobigegoNoConcat" v-sticky-container>
+				<div class="_debobigegoLabel">{{ $ts.smtpConfig }}</div>
 				<div class="main">
 					<FormInput v-model:value="smtpHost">
 						<span>{{ $ts.smtpHost }}</span>
@@ -38,13 +38,13 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import FormSwitch from '@client/components/form/switch.vue';
-import FormInput from '@client/components/form/input.vue';
-import FormButton from '@client/components/form/button.vue';
-import FormBase from '@client/components/form/base.vue';
-import FormGroup from '@client/components/form/group.vue';
-import FormInfo from '@client/components/form/info.vue';
-import FormSuspense from '@client/components/form/suspense.vue';
+import FormSwitch from '@client/components/debobigego/switch.vue';
+import FormInput from '@client/components/debobigego/input.vue';
+import FormButton from '@client/components/debobigego/button.vue';
+import FormBase from '@client/components/debobigego/base.vue';
+import FormGroup from '@client/components/debobigego/group.vue';
+import FormInfo from '@client/components/debobigego/info.vue';
+import FormSuspense from '@client/components/debobigego/suspense.vue';
 import * as os from '@client/os';
 import * as symbols from '@client/symbols';
 import { fetchInstance } from '@client/instance';

@@ -59,7 +59,7 @@
 import { defineAsyncComponent, defineComponent } from 'vue';
 import { v4 as uuid } from 'uuid';
 import XContainer from './page-editor.container.vue';
-import MkTextarea from '@client/components/ui/textarea.vue';
+import MkTextarea from '@client/components/form/textarea.vue';
 import { blockDefs } from '@client/scripts/hpml/index';
 import * as os from '@client/os';
 import { isLiteralValue } from '@client/scripts/hpml/expr';

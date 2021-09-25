@@ -57,8 +57,8 @@ const getPasswordStrength = require('syuilo-password-strength');
 import { toUnicode } from 'punycode/';
 import { host, url } from '@client/config';
 import MkButton from './ui/button.vue';
-import MkInput from './ui/input.vue';
-import MkSwitch from './ui/switch.vue';
+import MkInput from './form/input.vue';
+import MkSwitch from './form/switch.vue';
 import * as os from '@client/os';
 import { login } from '@client/account';
 

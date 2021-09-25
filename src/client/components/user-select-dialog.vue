@@ -52,7 +52,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import MkInput from './ui/input.vue';
+import MkInput from './form/input.vue';
 import XModalWindow from '@client/components/ui/modal-window.vue';
 import * as os from '@client/os';
 

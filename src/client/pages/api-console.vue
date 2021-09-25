@@ -27,9 +27,9 @@
 import { defineComponent } from 'vue';
 import * as JSON5 from 'json5';
 import MkButton from '@client/components/ui/button.vue';
-import MkInput from '@client/components/ui/input.vue';
-import MkTextarea from '@client/components/ui/textarea.vue';
-import MkSwitch from '@client/components/ui/switch.vue';
+import MkInput from '@client/components/form/input.vue';
+import MkTextarea from '@client/components/form/textarea.vue';
+import MkSwitch from '@client/components/form/switch.vue';
 import * as os from '@client/os';
 import * as symbols from '@client/symbols';
 

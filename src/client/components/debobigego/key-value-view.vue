@@ -1,6 +1,6 @@
 <template>
-<div class="_formItem">
-	<div class="_formPanel anocepby">
+<div class="_debobigegoItem">
+	<div class="_debobigegoPanel anocepby">
 		<span class="key"><slot name="key"></slot></span>
 		<span class="value"><slot name="value"></slot></span>
 	</div>
@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import './form.scss';
+import './debobigego.scss';
 
 export default defineComponent({
 

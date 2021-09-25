@@ -10,7 +10,7 @@
 		</FormTextarea>
 
 		<FormGroup>
-			<div v-for="file in files" :key="file.id" class="_formItem _formPanel wqugxsfx" :style="{ backgroundImage: file ? `url(${ file.thumbnailUrl })` : null }">
+			<div v-for="file in files" :key="file.id" class="_debobigegoItem _debobigegoPanel wqugxsfx" :style="{ backgroundImage: file ? `url(${ file.thumbnailUrl })` : null }">
 				<div class="name">{{ file.name }}</div>
 				<button class="remove _button" @click="remove(file)" v-tooltip="$ts.remove"><i class="fas fa-times"></i></button>
 			</div>
@@ -29,14 +29,14 @@
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue';
-import FormButton from '@client/components/form/button.vue';
-import FormInput from '@client/components/form/input.vue';
-import FormTextarea from '@client/components/form/textarea.vue';
-import FormSwitch from '@client/components/form/switch.vue';
-import FormTuple from '@client/components/form/tuple.vue';
-import FormBase from '@client/components/form/base.vue';
-import FormGroup from '@client/components/form/group.vue';
-import FormSuspense from '@client/components/form/suspense.vue';
+import FormButton from '@client/components/debobigego/button.vue';
+import FormInput from '@client/components/debobigego/input.vue';
+import FormTextarea from '@client/components/debobigego/textarea.vue';
+import FormSwitch from '@client/components/debobigego/switch.vue';
+import FormTuple from '@client/components/debobigego/tuple.vue';
+import FormBase from '@client/components/debobigego/base.vue';
+import FormGroup from '@client/components/debobigego/group.vue';
+import FormSuspense from '@client/components/debobigego/suspense.vue';
 import { selectFile } from '@client/scripts/select-file';
 import * as os from '@client/os';
 import * as symbols from '@client/symbols';

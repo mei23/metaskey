@@ -37,23 +37,23 @@ export default defineComponent({
 		--formXPadding: 0px;
 
 		> ::v-deep(*) {
-			._formPanel {
+			._debobigegoPanel {
 				border: solid 0.5px var(--divider);
 				border-radius: 0;
 				border-left: none;
 				border-right: none;
 			}
 
-			._form_group {
-				> *:not(._formNoConcat) {
-					&:not(:last-child):not(._formNoConcatPrev) {
-						&._formPanel, ._formPanel {
+			._debobigego_group {
+				> *:not(._debobigegoNoConcat) {
+					&:not(:last-child):not(._debobigegoNoConcatPrev) {
+						&._debobigegoPanel, ._debobigegoPanel {
 							border-bottom: solid 0.5px var(--divider);
 						}
 					}
 
-					&:not(:first-child):not(._formNoConcatNext) {
-						&._formPanel, ._formPanel {
+					&:not(:first-child):not(._debobigegoNoConcatNext) {
+						&._debobigegoPanel, ._debobigegoPanel {
 							border-top: none;
 						}
 					}

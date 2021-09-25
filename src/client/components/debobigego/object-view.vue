@@ -1,8 +1,8 @@
 <template>
-<FormGroup class="_formItem">
+<FormGroup class="_debobigegoItem">
 	<template #label><slot></slot></template>
-	<div class="drooglns _formItem" :class="{ tall }">
-		<div class="input _formPanel">
+	<div class="drooglns _debobigegoItem" :class="{ tall }">
+		<div class="input _debobigegoPanel">
 			<textarea class="_monospace"
 				v-model="v"
 				readonly
@@ -17,7 +17,7 @@
 <script lang="ts">
 import { defineComponent, ref, toRefs, watch } from 'vue';
 import * as JSON5 from 'json5';
-import './form.scss';
+import './debobigego.scss';
 import FormGroup from './group.vue';
 
 export default defineComponent({
