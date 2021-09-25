@@ -1,7 +1,7 @@
 <template>
 <div class="driuhtrh">
 	<div class="query">
-		<MkInput v-model="q" class="_inputNoTopMargin _inputNoBottomMargin" :placeholder="$ts.search">
+		<MkInput v-model="q" class="" :placeholder="$ts.search">
 			<template #prefix><i class="fas fa-search"></i></template>
 		</MkInput>
 

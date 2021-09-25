@@ -1,7 +1,7 @@
 <template>
 <div class="shaynizk">
 	<div class="form">
-		<MkInput v-model="name" class="_inputNoTopMargin">
+		<MkInput v-model="name" class="">
 			<template #label>{{ $ts.name }}</template>
 		</MkInput>
 		<MkSelect v-model="src">

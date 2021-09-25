@@ -2,7 +2,7 @@
 <div class="vtaihdtm">
 	<div class="body">
 		<div class="search">
-			<MkInput v-model="query" :debounce="true" type="search" class="_inputNoTopMargin _inputNoBottomMargin" :placeholder="$ts.search">
+			<MkInput v-model="query" :debounce="true" type="search" class="" :placeholder="$ts.search">
 				<template #prefix><i class="fas fa-search"></i></template>
 			</MkInput>
 		</div>

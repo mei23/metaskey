@@ -1,11 +1,11 @@
 <template>
 <div class="taeiyria">
 	<div class="query">
-		<MkInput v-model="host" :debounce="true" class="_inputNoTopMargin">
+		<MkInput v-model="host" :debounce="true" class="">
 			<template #prefix><i class="fas fa-search"></i></template>
 			<template #label>{{ $ts.host }}</template>
 		</MkInput>
-		<div class="_inputSplit _inputNoBottomMargin">
+		<div class="_inputSplit">
 			<MkSelect v-model="state">
 				<template #label>{{ $ts.state }}</template>
 				<option value="all">{{ $ts.all }}</option>

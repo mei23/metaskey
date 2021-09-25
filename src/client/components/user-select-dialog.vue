@@ -10,7 +10,7 @@
 	<template #header>{{ $ts.selectUser }}</template>
 	<div class="tbhwbxda _monolithic_">
 		<div class="_section">
-			<div class="_inputSplit _inputNoTopMargin _inputNoBottomMargin">
+			<div class="_inputSplit">
 				<MkInput v-model="username" class="input" @update:modelValue="search" ref="username">
 					<template #label>{{ $ts.username }}</template>
 					<template #prefix>@</template>

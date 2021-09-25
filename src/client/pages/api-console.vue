@@ -1,7 +1,7 @@
 <template>
 <div class="_root">
 	<div class="_block" style="padding: 24px;">
-		<MkInput v-model="endpoint" :datalist="endpoints" @update:modelValue="onEndpointChange()" class="_inputNoTopMargin">
+		<MkInput v-model="endpoint" :datalist="endpoints" @update:modelValue="onEndpointChange()" class="">
 			<template #label>Endpoint</template>
 		</MkInput>
 		<MkTextarea v-model="body" code>
