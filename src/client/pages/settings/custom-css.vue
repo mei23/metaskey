@@ -42,7 +42,8 @@ export default defineComponent({
 		return {
 			[symbols.PAGE_INFO]: {
 				title: this.$ts.customCss,
-				icon: 'fas fa-code'
+				icon: 'fas fa-code',
+				bg: 'var(--bg)',
 			},
 			localCustomCss: localStorage.getItem('customCss')
 		}

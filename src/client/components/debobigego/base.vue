@@ -21,20 +21,20 @@ export default defineComponent({
 <style lang="scss" scoped>
 .rbusrurv {
 	// 他のCSSからも参照されるので消さないように
-	--formXPadding: 32px;
-	--formYPadding: 32px;
+	--debobigegoXPadding: 32px;
+	--debobigegoYPadding: 32px;
 
-	--formContentHMargin: 16px;
+	--debobigegoContentHMargin: 16px;
 
 	font-size: 95%;
 	line-height: 1.3em;
 	background: var(--bg);
-	padding: var(--formYPadding) var(--formXPadding);
+	padding: var(--debobigegoYPadding) var(--debobigegoXPadding);
 	max-width: 750px;
 	margin: 0 auto;
 
 	&:not(.wide).max-width_400px {
-		--formXPadding: 0px;
+		--debobigegoXPadding: 0px;
 
 		> ::v-deep(*) {
 			._debobigegoPanel {

@@ -32,7 +32,8 @@ export default defineComponent({
 		return {
 			[symbols.PAGE_INFO]: {
 				title: this.$ts._accountDelete.accountDelete,
-				icon: 'fas fa-exclamation-triangle'
+				icon: 'fas fa-exclamation-triangle',
+				bg: 'var(--bg)',
 			},
 			debug,
 		}

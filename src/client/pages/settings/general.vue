@@ -124,7 +124,8 @@ export default defineComponent({
 		return {
 			[symbols.PAGE_INFO]: {
 				title: this.$ts.general,
-				icon: 'fas fa-cogs'
+				icon: 'fas fa-cogs',
+				bg: 'var(--bg)'
 			},
 			langs,
 			lang: localStorage.getItem('lang'),

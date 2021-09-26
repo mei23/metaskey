@@ -56,7 +56,8 @@ export default defineComponent({
 		return {
 			[symbols.PAGE_INFO]: {
 				title: this.$ts.registry,
-				icon: 'fas fa-cogs'
+				icon: 'fas fa-cogs',
+				bg: 'var(--bg)',
 			},
 			keys: null,
 		}

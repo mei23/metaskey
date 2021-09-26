@@ -48,7 +48,8 @@ export default defineComponent({
 		return {
 			[symbols.PAGE_INFO]: {
 				title: this.$ts.importAndExport,
-				icon: 'fas fa-boxes'
+				icon: 'fas fa-boxes',
+				bg: 'var(--bg)',
 			},
 		}
 	},

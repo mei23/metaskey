@@ -19,8 +19,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import FormRange from '@client/components/form/range.vue';
-import FormSelect from '@client/components/form/select.vue';
+import FormRange from '@client/components/debobigego/range.vue';
+import FormSelect from '@client/components/debobigego/select.vue';
 import FormBase from '@client/components/debobigego/base.vue';
 import FormButton from '@client/components/debobigego/button.vue';
 import FormGroup from '@client/components/debobigego/group.vue';
@@ -71,7 +71,8 @@ export default defineComponent({
 		return {
 			[symbols.PAGE_INFO]: {
 				title: this.$ts.sounds,
-				icon: 'fas fa-music'
+				icon: 'fas fa-music',
+				bg: 'var(--bg)',
 			},
 			sounds: {},
 		}

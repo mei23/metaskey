@@ -64,7 +64,8 @@ export default defineComponent({
 				action: {
 					icon: 'fas fa-eye',
 					handler: this.preview
-				}
+				},
+				bg: 'var(--bg)',
 			},
 			reactions: JSON.parse(JSON.stringify(this.$store.state.reactions)),
 		}

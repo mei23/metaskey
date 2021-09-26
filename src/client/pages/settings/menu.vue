@@ -19,11 +19,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import FormSwitch from '@client/components/form/switch.vue';
-import FormTextarea from '@client/components/form/textarea.vue';
-import FormRadios from '@client/components/form/radios.vue';
+import FormTextarea from '@client/components/debobigego/textarea.vue';
+import FormRadios from '@client/components/debobigego/radios.vue';
 import FormBase from '@client/components/debobigego/base.vue';
-import FormGroup from '@client/components/debobigego/group.vue';
 import FormButton from '@client/components/debobigego/button.vue';
 import * as os from '@client/os';
 import { menuDef } from '@client/menu';
@@ -45,7 +43,8 @@ export default defineComponent({
 		return {
 			[symbols.PAGE_INFO]: {
 				title: this.$ts.menu,
-				icon: 'fas fa-list-ul'
+				icon: 'fas fa-list-ul',
+				bg: 'var(--bg)',
 			},
 			menuDef: menuDef,
 			items: defaultStore.state.menu.join('\n'),

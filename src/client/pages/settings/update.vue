@@ -60,7 +60,8 @@ export default defineComponent({
 		return {
 			[symbols.PAGE_INFO]: {
 				title: 'Misskey Update',
-				icon: 'fas fa-sync-alt'
+				icon: 'fas fa-sync-alt',
+				bg: 'var(--bg)',
 			},
 			version,
 			instanceName,

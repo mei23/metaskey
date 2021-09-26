@@ -26,7 +26,7 @@ import FormButton from '@client/components/debobigego/button.vue';
 import FormLink from '@client/components/debobigego/link.vue';
 import FormBase from '@client/components/debobigego/base.vue';
 import FormGroup from '@client/components/debobigego/group.vue';
-import FormSwitch from '@client/components/form/switch.vue';
+import FormSwitch from '@client/components/debobigego/switch.vue';
 import * as os from '@client/os';
 import * as symbols from '@client/symbols';
 
@@ -45,7 +45,8 @@ export default defineComponent({
 		return {
 			[symbols.PAGE_INFO]: {
 				title: this.$ts.email,
-				icon: 'fas fa-envelope'
+				icon: 'fas fa-envelope',
+				bg: 'var(--bg)',
 			},
 		}
 	},

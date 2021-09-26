@@ -29,8 +29,8 @@
 	position: sticky;
 	top: var(--stickyTop, 0px);
 	z-index: 2;
-	margin: -8px calc(var(--formXPadding) * -1) 0 calc(var(--formXPadding) * -1);
-	padding: 8px calc(var(--formContentHMargin) + var(--formXPadding)) 8px calc(var(--formContentHMargin) + var(--formXPadding));
+	margin: -8px calc(var(--debobigegoXPadding) * -1) 0 calc(var(--debobigegoXPadding) * -1);
+	padding: 8px calc(var(--debobigegoContentHMargin) + var(--debobigegoXPadding)) 8px calc(var(--debobigegoContentHMargin) + var(--debobigegoXPadding));
 	background: var(--X17);
 	-webkit-backdrop-filter: var(--blur, blur(10px));
 	backdrop-filter: var(--blur, blur(10px));
@@ -42,7 +42,7 @@
 }
 
 ._debobigegoCaption {
-	padding: 8px var(--formContentHMargin) 0 var(--formContentHMargin);
+	padding: 8px var(--debobigegoContentHMargin) 0 var(--debobigegoContentHMargin);
 }
 
 ._debobigegoItem {

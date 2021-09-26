@@ -24,7 +24,7 @@
 			</div>
 			<div class="_debobigegoItem _debobigegoNoConcat" v-sticky-container>
 				<div class="_debobigegoLabel">{{ $ts.preview }}</div>
-				<div class="_debobigegoPanel" style="padding: var(--formContentHMargin);">
+				<div class="_debobigegoPanel" style="padding: var(--debobigegoContentHMargin);">
 					<MkCaptcha provider="hcaptcha" :sitekey="hcaptchaSiteKey || '10000000-ffff-ffff-ffff-000000000001'"/>
 				</div>
 			</div>
@@ -45,7 +45,7 @@
 			</div>
 			<div v-if="recaptchaSiteKey" class="_debobigegoItem _debobigegoNoConcat" v-sticky-container>
 				<div class="_debobigegoLabel">{{ $ts.preview }}</div>
-				<div class="_debobigegoPanel" style="padding: var(--formContentHMargin);">
+				<div class="_debobigegoPanel" style="padding: var(--debobigegoContentHMargin);">
 					<MkCaptcha provider="recaptcha" :sitekey="recaptchaSiteKey"/>
 				</div>
 			</div>

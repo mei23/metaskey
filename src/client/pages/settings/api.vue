@@ -30,7 +30,8 @@ export default defineComponent({
 		return {
 			[symbols.PAGE_INFO]: {
 				title: 'API',
-				icon: 'fas fa-key'
+				icon: 'fas fa-key',
+				bg: 'var(--bg)',
 			},
 			isDesktop: window.innerWidth >= 1100,
 		};

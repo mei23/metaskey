@@ -33,7 +33,8 @@ export default defineComponent({
 		return {
 			[symbols.PAGE_INFO]: {
 				title: this.$ts.notifications,
-				icon: 'fas fa-bell'
+				icon: 'fas fa-bell',
+				bg: 'var(--bg)',
 			},
 		}
 	},

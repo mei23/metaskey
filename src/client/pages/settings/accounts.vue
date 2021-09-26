@@ -47,6 +47,7 @@ export default defineComponent({
 			[symbols.PAGE_INFO]: {
 				title: this.$ts.accounts,
 				icon: 'fas fa-users',
+				bg: 'var(--bg)',
 			},
 			storedAccounts: getAccounts().then(accounts => accounts.filter(x => x.id !== this.$i.id)),
 			accounts: null,

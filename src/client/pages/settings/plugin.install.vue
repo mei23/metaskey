@@ -48,7 +48,8 @@ export default defineComponent({
 		return {
 			[symbols.PAGE_INFO]: {
 				title: this.$ts._plugin.install,
-				icon: 'fas fa-download'
+				icon: 'fas fa-download',
+				bg: 'var(--bg)',
 			},
 			code: null,
 		}

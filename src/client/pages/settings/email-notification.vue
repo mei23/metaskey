@@ -47,7 +47,8 @@ export default defineComponent({
 		return {
 			[symbols.PAGE_INFO]: {
 				title: this.$ts.emailNotification,
-				icon: 'fas fa-envelope'
+				icon: 'fas fa-envelope',
+				bg: 'var(--bg)',
 			},
 
 			mention: this.$i.emailNotificationTypes.includes('mention'),

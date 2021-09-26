@@ -58,7 +58,8 @@ export default defineComponent({
 		return {
 			[symbols.PAGE_INFO]: {
 				title: this.$ts.wordMute,
-				icon: 'fas fa-comment-slash'
+				icon: 'fas fa-comment-slash',
+				bg: 'var(--bg)',
 			},
 			tab: 'soft',
 			softMutedWords: '',

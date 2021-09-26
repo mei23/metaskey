@@ -58,7 +58,8 @@ export default defineComponent({
 		return {
 			[symbols.PAGE_INFO]: {
 				title: this.$ts.deck,
-				icon: 'fas fa-columns'
+				icon: 'fas fa-columns',
+				bg: 'var(--bg)',
 			},
 		}
 	},

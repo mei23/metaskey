@@ -58,7 +58,8 @@ export default defineComponent({
 		return {
 			[symbols.PAGE_INFO]: {
 				title: this.$ts._plugin.manage,
-				icon: 'fas fa-plug'
+				icon: 'fas fa-plug',
+				bg: 'var(--bg)',
 			},
 			plugins: ColdDeviceStorage.get('plugins'),
 		}
