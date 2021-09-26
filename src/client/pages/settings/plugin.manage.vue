@@ -4,8 +4,8 @@
 		<template #label><span style="display: flex;"><b>{{ plugin.name }}</b><span style="margin-left: auto;">v{{ plugin.version }}</span></span></template>
 
 		<FormSwitch :value="plugin.active" @update:value="changeActive(plugin, $event)">{{ $ts.makeActive }}</FormSwitch>
-		<div class="_formItem">
-			<div class="_formPanel" style="padding: 16px;">
+		<div class="_debobigegoItem">
+			<div class="_debobigegoPanel" style="padding: 16px;">
 				<div class="_keyValue">
 					<div>{{ $ts.author }}:</div>
 					<div>{{ plugin.author }}</div>
@@ -20,8 +20,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="_formItem">
-			<div class="_formPanel" style="padding: 16px;">
+		<div class="_debobigegoItem">
+			<div class="_debobigegoPanel" style="padding: 16px;">
 				<MkButton @click="config(plugin)" inline v-if="plugin.config"><i class="fas fa-cog"></i> {{ $ts.settings }}</MkButton>
 				<MkButton @click="uninstall(plugin)" inline danger><i class="fas fa-trash-alt"></i> {{ $ts.uninstall }}</MkButton>
 			</div>

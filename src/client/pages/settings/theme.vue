@@ -1,7 +1,7 @@
 <template>
 <FormBase>
 	<FormGroup>
-		<div class="rfqxtzch _formItem _formPanel">
+		<div class="rfqxtzch _debobigegoItem _debobigegoPanel">
 			<div class="darkMode">
 				<div class="toggleWrapper">
 					<input type="checkbox" class="dn" id="dn" v-model="darkMode"/>
@@ -86,8 +86,8 @@
 
 <script lang="ts">
 import { computed, defineComponent, onActivated, onMounted, ref, watch } from 'vue';
-import FormSwitch from '@client/components/form/switch.vue';
-import FormSelect from '@client/components/form/select.vue';
+import FormSwitch from '@client/components/debobigego/switch.vue';
+import FormSelect from '@client/components/debobigego/select.vue';
 import FormBase from '@client/components/debobigego/base.vue';
 import FormGroup from '@client/components/debobigego/group.vue';
 import FormLink from '@client/components/debobigego/link.vue';

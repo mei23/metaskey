@@ -1,7 +1,7 @@
 <template>
 <FormBase>
 	<FormGroup>
-		<div class="_formItem _formPanel llvierxe" :style="{ backgroundImage: $i.bannerUrl ? `url(${ $i.bannerUrl })` : null }">
+		<div class="_debobigegoItem _debobigegoPanel llvierxe" :style="{ backgroundImage: $i.bannerUrl ? `url(${ $i.bannerUrl })` : null }">
 			<MkAvatar class="avatar" :user="$i"/>
 		</div>
 		<FormButton @click="changeAvatar" primary>{{ $ts._profile.changeAvatar }}</FormButton>

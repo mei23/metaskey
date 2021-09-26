@@ -5,7 +5,7 @@
 		<option value="hard">{{ $ts._wordMute.hard }}</option>
 	</MkTab>
 	<FormBase>
-		<div class="_formItem">
+		<div class="_debobigegoItem">
 			<div v-show="tab === 'soft'">
 				<FormInfo>{{ $ts._wordMute.softDescription }}</FormInfo>
 				<FormTextarea v-model:value="softMutedWords">

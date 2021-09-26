@@ -8,7 +8,7 @@
 			</div>
 		</template>
 		<template #default="{items}">
-			<div class="_formPanel bfomjevm" v-for="token in items" :key="token.id">
+			<div class="_debobigegoPanel bfomjevm" v-for="token in items" :key="token.id">
 				<img class="icon" :src="token.iconUrl" alt="" v-if="token.iconUrl"/>
 				<div class="body">
 					<div class="name">{{ token.name }}</div>
