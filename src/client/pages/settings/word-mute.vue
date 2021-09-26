@@ -33,10 +33,10 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import FormTextarea from '@client/components/form/textarea.vue';
-import FormBase from '@client/components/form/base.vue';
-import FormKeyValueView from '@client/components/form/key-value-view.vue';
-import FormButton from '@client/components/form/button.vue';
-import FormInfo from '@client/components/form/info.vue';
+import FormBase from '@client/components/debobigego/base.vue';
+import FormKeyValueView from '@client/components/debobigego/key-value-view.vue';
+import FormButton from '@client/components/debobigego/button.vue';
+import FormInfo from '@client/components/debobigego/info.vue';
 import MkTab from '@client/components/tab.vue';
 import * as os from '@client/os';
 import number from '@client/filters/number';

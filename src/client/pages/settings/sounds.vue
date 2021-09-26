@@ -21,9 +21,9 @@
 import { defineComponent } from 'vue';
 import FormRange from '@client/components/form/range.vue';
 import FormSelect from '@client/components/form/select.vue';
-import FormBase from '@client/components/form/base.vue';
-import FormButton from '@client/components/form/button.vue';
-import FormGroup from '@client/components/form/group.vue';
+import FormBase from '@client/components/debobigego/base.vue';
+import FormButton from '@client/components/debobigego/button.vue';
+import FormGroup from '@client/components/debobigego/group.vue';
 import * as os from '@client/os';
 import { ColdDeviceStorage } from '@client/store';
 import { playFile } from '@client/scripts/sound';

@@ -46,7 +46,7 @@ import { defineComponent } from 'vue';
 import MkButton from '@client/components/ui/button.vue';
 import MkInput from '@client/components/form/input.vue';
 import MkTextarea from '@client/components/form/textarea.vue';
-import MkRadio from '@client/components/ui/radio.vue';
+import MkRadio from '@client/components/form/radio.vue';
 import * as os from '@client/os';
 import * as symbols from '@client/symbols';
 

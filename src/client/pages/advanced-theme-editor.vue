@@ -95,7 +95,7 @@ import { defineComponent } from 'vue';
 import * as JSON5 from 'json5';
 import { toUnicode } from 'punycode/';
 
-import MkRadio from '@client/components/ui/radio.vue';
+import MkRadio from '@client/components/form/radio.vue';
 import MkButton from '@client/components/ui/button.vue';
 import MkInput from '@client/components/form/input.vue';
 import MkTextarea from '@client/components/form/textarea.vue';

@@ -36,8 +36,8 @@
 import { defineComponent } from 'vue';
 import FormSwitch from '@client/components/form/switch.vue';
 import FormSelect from '@client/components/form/select.vue';
-import FormBase from '@client/components/form/base.vue';
-import FormGroup from '@client/components/form/group.vue';
+import FormBase from '@client/components/debobigego/base.vue';
+import FormGroup from '@client/components/debobigego/group.vue';
 import * as os from '@client/os';
 import { defaultStore } from '@client/store';
 import * as symbols from '@client/symbols';

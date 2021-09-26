@@ -128,7 +128,7 @@ import { defineComponent } from 'vue';
 import * as maps from '../../../games/reversi/maps';
 import MkButton from '@client/components/ui/button.vue';
 import MkSwitch from '@client/components/form/switch.vue';
-import MkRadio from '@client/components/ui/radio.vue';
+import MkRadio from '@client/components/form/radio.vue';
 
 export default defineComponent({
 	components: {

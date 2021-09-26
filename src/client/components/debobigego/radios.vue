@@ -1,6 +1,6 @@
 <script lang="ts">
 import { defineComponent, h } from 'vue';
-import MkRadio from '@client/components/ui/radio.vue';
+import MkRadio from '@client/components/form/radio.vue';
 import './debobigego.scss';
 
 export default defineComponent({

@@ -33,11 +33,11 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import MkButton from '@client/components/ui/button.vue';
-import MkTextarea from '@client/components/ui/textarea.vue';
-import MkSelect from '@client/components/ui/select.vue';
+import MkTextarea from '@client/components/form/textarea.vue';
+import MkSelect from '@client/components/form/select.vue';
 import FormSwitch from '@client/components/form/switch.vue';
-import FormBase from '@client/components/form/base.vue';
-import FormGroup from '@client/components/form/group.vue';
+import FormBase from '@client/components/debobigego/base.vue';
+import FormGroup from '@client/components/debobigego/group.vue';
 import * as os from '@client/os';
 import { ColdDeviceStorage } from '@client/store';
 import * as symbols from '@client/symbols';

@@ -24,11 +24,11 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import FormSuspense from '@client/components/form/suspense.vue';
-import FormLink from '@client/components/form/link.vue';
-import FormBase from '@client/components/form/base.vue';
-import FormGroup from '@client/components/form/group.vue';
-import FormButton from '@client/components/form/button.vue';
+import FormSuspense from '@client/components/debobigego/suspense.vue';
+import FormLink from '@client/components/debobigego/link.vue';
+import FormBase from '@client/components/debobigego/base.vue';
+import FormGroup from '@client/components/debobigego/group.vue';
+import FormButton from '@client/components/debobigego/button.vue';
 import * as os from '@client/os';
 import * as symbols from '@client/symbols';
 import { getAccounts, addAccount, login } from '@client/account';

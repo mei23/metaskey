@@ -32,7 +32,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { apiUrl } from '@client/config';
-import FormBase from '@client/components/form/base.vue';
+import FormBase from '@client/components/debobigego/base.vue';
 import MkButton from '@client/components/ui/button.vue';
 import * as os from '@client/os';
 import * as symbols from '@client/symbols';

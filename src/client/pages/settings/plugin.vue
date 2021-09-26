@@ -7,9 +7,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import FormBase from '@client/components/form/base.vue';
-import FormGroup from '@client/components/form/group.vue';
-import FormLink from '@client/components/form/link.vue';
+import FormBase from '@client/components/debobigego/base.vue';
+import FormGroup from '@client/components/debobigego/group.vue';
+import FormLink from '@client/components/debobigego/link.vue';
 import * as os from '@client/os';
 import { ColdDeviceStorage } from '@client/store';
 import * as symbols from '@client/symbols';

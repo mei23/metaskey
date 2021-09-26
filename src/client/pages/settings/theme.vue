@@ -88,10 +88,10 @@
 import { computed, defineComponent, onActivated, onMounted, ref, watch } from 'vue';
 import FormSwitch from '@client/components/form/switch.vue';
 import FormSelect from '@client/components/form/select.vue';
-import FormBase from '@client/components/form/base.vue';
-import FormGroup from '@client/components/form/group.vue';
-import FormLink from '@client/components/form/link.vue';
-import FormButton from '@client/components/form/button.vue';
+import FormBase from '@client/components/debobigego/base.vue';
+import FormGroup from '@client/components/debobigego/group.vue';
+import FormLink from '@client/components/debobigego/link.vue';
+import FormButton from '@client/components/debobigego/button.vue';
 import { builtinThemes } from '@client/scripts/theme';
 import { selectFile } from '@client/scripts/select-file';
 import { isDeviceDarkmode } from '@client/scripts/is-device-darkmode';

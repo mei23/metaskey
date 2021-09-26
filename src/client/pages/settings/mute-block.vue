@@ -35,10 +35,10 @@
 import { defineComponent } from 'vue';
 import MkPagination from '@client/components/ui/pagination.vue';
 import MkTab from '@client/components/tab.vue';
-import FormInfo from '@client/components/form/info.vue';
-import FormLink from '@client/components/form/link.vue';
-import FormBase from '@client/components/form/base.vue';
-import FormGroup from '@client/components/form/group.vue';
+import FormInfo from '@client/components/debobigego/info.vue';
+import FormLink from '@client/components/debobigego/link.vue';
+import FormBase from '@client/components/debobigego/base.vue';
+import FormGroup from '@client/components/debobigego/group.vue';
 import { userPage } from '@client/filters/user';
 import * as os from '@client/os';
 import * as symbols from '@client/symbols';

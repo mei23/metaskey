@@ -32,11 +32,11 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import FormSwitch from '@client/components/form/switch.vue';
-import FormLink from '@client/components/form/link.vue';
+import FormLink from '@client/components/debobigego/link.vue';
 import FormRadios from '@client/components/form/radios.vue';
 import FormInput from '@client/components/form/input.vue';
-import FormBase from '@client/components/form/base.vue';
-import FormGroup from '@client/components/form/group.vue';
+import FormBase from '@client/components/debobigego/base.vue';
+import FormGroup from '@client/components/debobigego/group.vue';
 import { deckStore } from '@client/ui/deck/deck-store';
 import * as os from '@client/os';
 import { unisonReload } from '@client/scripts/unison-reload';
