@@ -1,19 +1,19 @@
 <template>
 <FormBase>
 	<FormSuspense :p="init">
-		<FormSwitch v-model:value="enableTwitterIntegration">
+		<FormSwitch v-model="enableTwitterIntegration">
 			{{ $ts.enable }}
 		</FormSwitch>
 
 		<template v-if="enableTwitterIntegration">
 			<FormInfo>Callback URL: {{ `${url}/api/tw/cb` }}</FormInfo>
 		
-			<FormInput v-model:value="twitterConsumerKey">
+			<FormInput v-model="twitterConsumerKey">
 				<template #prefix><i class="fas fa-key"></i></template>
 				Consumer Key
 			</FormInput>
 
-			<FormInput v-model:value="twitterConsumerSecret">
+			<FormInput v-model="twitterConsumerSecret">
 				<template #prefix><i class="fas fa-key"></i></template>
 				Consumer Secret
 			</FormInput>

@@ -20,9 +20,9 @@
 		</FormGroup>
 
 		<FormGroup v-if="iAmModerator">
-			<FormSwitch v-if="user.host == null && $i.isAdmin && (moderator || !user.isAdmin)" @update:value="toggleModerator" v-model:value="moderator">{{ $ts.moderator }}</FormSwitch>
-			<FormSwitch @update:value="toggleSilence" v-model:value="silenced">{{ $ts.silence }}</FormSwitch>
-			<FormSwitch @update:value="toggleSuspend" v-model:value="suspended">{{ $ts.suspend }}</FormSwitch>
+			<FormSwitch v-if="user.host == null && $i.isAdmin && (moderator || !user.isAdmin)" @update:modelValue="toggleModerator" v-model="moderator">{{ $ts.moderator }}</FormSwitch>
+			<FormSwitch @update:modelValue="toggleSilence" v-model="silenced">{{ $ts.silence }}</FormSwitch>
+			<FormSwitch @update:modelValue="toggleSuspend" v-model="suspended">{{ $ts.suspend }}</FormSwitch>
 		</FormGroup>
 
 		<FormGroup>

@@ -1,19 +1,19 @@
 <template>
 <FormBase>
 	<FormSuspense :p="init">
-		<FormSwitch v-model:value="enableGithubIntegration">
+		<FormSwitch v-model="enableGithubIntegration">
 			{{ $ts.enable }}
 		</FormSwitch>
 
 		<template v-if="enableGithubIntegration">
 			<FormInfo>Callback URL: {{ `${url}/api/gh/cb` }}</FormInfo>
 		
-			<FormInput v-model:value="githubClientId">
+			<FormInput v-model="githubClientId">
 				<template #prefix><i class="fas fa-key"></i></template>
 				Client ID
 			</FormInput>
 
-			<FormInput v-model:value="githubClientSecret">
+			<FormInput v-model="githubClientSecret">
 				<template #prefix><i class="fas fa-key"></i></template>
 				Client Secret
 			</FormInput>

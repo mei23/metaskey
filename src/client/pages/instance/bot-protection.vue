@@ -12,11 +12,11 @@
 			<div class="_debobigegoItem _debobigegoNoConcat" v-sticky-container>
 				<div class="_debobigegoLabel">hCaptcha</div>
 				<div class="main">
-					<FormInput v-model:value="hcaptchaSiteKey">
+					<FormInput v-model="hcaptchaSiteKey">
 						<template #prefix><i class="fas fa-key"></i></template>
 						<span>{{ $ts.hcaptchaSiteKey }}</span>
 					</FormInput>
-					<FormInput v-model:value="hcaptchaSecretKey">
+					<FormInput v-model="hcaptchaSecretKey">
 						<template #prefix><i class="fas fa-key"></i></template>
 						<span>{{ $ts.hcaptchaSecretKey }}</span>
 					</FormInput>
@@ -33,11 +33,11 @@
 			<div class="_debobigegoItem _debobigegoNoConcat" v-sticky-container>
 				<div class="_debobigegoLabel">reCAPTCHA</div>
 				<div class="main">
-					<FormInput v-model:value="recaptchaSiteKey">
+					<FormInput v-model="recaptchaSiteKey">
 						<template #prefix><i class="fas fa-key"></i></template>
 						<span>{{ $ts.recaptchaSiteKey }}</span>
 					</FormInput>
-					<FormInput v-model:value="recaptchaSecretKey">
+					<FormInput v-model="recaptchaSecretKey">
 						<template #prefix><i class="fas fa-key"></i></template>
 						<span>{{ $ts.recaptchaSecretKey }}</span>
 					</FormInput>

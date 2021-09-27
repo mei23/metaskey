@@ -19,7 +19,7 @@
 			</optgroup>
 		</MkSelect>
 
-		<XBlocks class="children" v-model:value="value.children" :hpml="hpml"/>
+		<XBlocks class="children" v-model="value.children" :hpml="hpml"/>
 	</section>
 </XContainer>
 </template>

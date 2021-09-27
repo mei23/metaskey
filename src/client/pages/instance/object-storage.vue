@@ -1,59 +1,59 @@
 <template>
 <FormBase>
 	<FormSuspense :p="init">
-		<FormSwitch v-model:value="useObjectStorage">{{ $ts.useObjectStorage }}</FormSwitch>
+		<FormSwitch v-model="useObjectStorage">{{ $ts.useObjectStorage }}</FormSwitch>
 
 		<template v-if="useObjectStorage">
-			<FormInput v-model:value="objectStorageBaseUrl">
+			<FormInput v-model="objectStorageBaseUrl">
 				<span>{{ $ts.objectStorageBaseUrl }}</span>
 				<template #desc>{{ $ts.objectStorageBaseUrlDesc }}</template>
 			</FormInput>
 
-			<FormInput v-model:value="objectStorageBucket">
+			<FormInput v-model="objectStorageBucket">
 				<span>{{ $ts.objectStorageBucket }}</span>
 				<template #desc>{{ $ts.objectStorageBucketDesc }}</template>
 			</FormInput>
 
-			<FormInput v-model:value="objectStoragePrefix">
+			<FormInput v-model="objectStoragePrefix">
 				<span>{{ $ts.objectStoragePrefix }}</span>
 				<template #desc>{{ $ts.objectStoragePrefixDesc }}</template>
 			</FormInput>
 
-			<FormInput v-model:value="objectStorageEndpoint">
+			<FormInput v-model="objectStorageEndpoint">
 				<span>{{ $ts.objectStorageEndpoint }}</span>
 				<template #desc>{{ $ts.objectStorageEndpointDesc }}</template>
 			</FormInput>
 
-			<FormInput v-model:value="objectStorageRegion">
+			<FormInput v-model="objectStorageRegion">
 				<span>{{ $ts.objectStorageRegion }}</span>
 				<template #desc>{{ $ts.objectStorageRegionDesc }}</template>
 			</FormInput>
 
-			<FormInput v-model:value="objectStorageAccessKey">
+			<FormInput v-model="objectStorageAccessKey">
 				<template #prefix><i class="fas fa-key"></i></template>
 				<span>Access key</span>
 			</FormInput>
 
-			<FormInput v-model:value="objectStorageSecretKey">
+			<FormInput v-model="objectStorageSecretKey">
 				<template #prefix><i class="fas fa-key"></i></template>
 				<span>Secret key</span>
 			</FormInput>
 
-			<FormSwitch v-model:value="objectStorageUseSSL">
+			<FormSwitch v-model="objectStorageUseSSL">
 				{{ $ts.objectStorageUseSSL }}
 				<template #desc>{{ $ts.objectStorageUseSSLDesc }}</template>
 			</FormSwitch>
 
-			<FormSwitch v-model:value="objectStorageUseProxy">
+			<FormSwitch v-model="objectStorageUseProxy">
 				{{ $ts.objectStorageUseProxy }}
 				<template #desc>{{ $ts.objectStorageUseProxyDesc }}</template>
 			</FormSwitch>
 
-			<FormSwitch v-model:value="objectStorageSetPublicRead">
+			<FormSwitch v-model="objectStorageSetPublicRead">
 				{{ $ts.objectStorageSetPublicRead }}
 			</FormSwitch>
 
-			<FormSwitch v-model:value="objectStorageS3ForcePathStyle">
+			<FormSwitch v-model="objectStorageS3ForcePathStyle">
 				s3ForcePathStyle
 			</FormSwitch>
 		</template>

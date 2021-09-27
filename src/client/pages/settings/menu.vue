@@ -1,6 +1,6 @@
 <template>
 <FormBase>
-	<FormTextarea v-model:value="items" tall manual-save>
+	<FormTextarea v-model="items" tall manual-save>
 		<span>{{ $ts.menu }}</span>
 		<template #desc><button class="_textButton" @click="addItem">{{ $ts.addItem }}</button></template>
 	</FormTextarea>

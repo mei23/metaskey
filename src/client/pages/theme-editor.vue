@@ -37,7 +37,7 @@
 	</div>
 
 	<FormGroup v-if="codeEnabled">
-		<FormTextarea v-model:value="themeCode" tall>
+		<FormTextarea v-model="themeCode" tall>
 			<span>{{ $ts._theme.code }}</span>
 		</FormTextarea>
 		<FormButton @click="applyThemeCode" primary>{{ $ts.apply }}</FormButton>
@@ -45,7 +45,7 @@
 	<FormButton v-else @click="codeEnabled = true"><i class="fas fa-code"></i> {{ $ts.editCode }}</FormButton>
 
 	<FormGroup v-if="descriptionEnabled">
-		<FormTextarea v-model:value="description">
+		<FormTextarea v-model="description">
 			<span>{{ $ts._theme.description }}</span>
 		</FormTextarea>
 	</FormGroup>

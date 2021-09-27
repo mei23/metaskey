@@ -3,7 +3,7 @@
 	<FormInfo warn>{{ $ts._plugin.installWarn }}</FormInfo>
 
 	<FormGroup>
-		<FormTextarea v-model:value="code" tall>
+		<FormTextarea v-model="code" tall>
 			<span>{{ $ts.code }}</span>
 		</FormTextarea>
 	</FormGroup>

@@ -1,6 +1,6 @@
 <template>
 <FormBase>
-	<FormSelect v-model:value="selectedThemeId">
+	<FormSelect v-model="selectedThemeId">
 		<template #label>{{ $ts.theme }}</template>
 		<optgroup :label="$ts._theme.installedThemes">
 			<option v-for="x in installedThemes" :value="x.id" :key="x.id">{{ x.name }}</option>

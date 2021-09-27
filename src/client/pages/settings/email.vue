@@ -14,7 +14,7 @@
 		{{ $ts.emailNotification }}
 	</FormLink>
 
-	<FormSwitch :value="$i.receiveAnnouncementEmail" @update:value="onChangeReceiveAnnouncementEmail">
+	<FormSwitch :value="$i.receiveAnnouncementEmail" @update:modelValue="onChangeReceiveAnnouncementEmail">
 		{{ $ts.receiveAnnouncementFromInstance }}
 	</FormSwitch>
 </FormBase>

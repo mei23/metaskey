@@ -2,18 +2,18 @@
 <FormBase>
 	<FormLink to="/settings/update">Misskey Update</FormLink>
 
-	<FormSwitch :value="$i.injectFeaturedNote" @update:value="onChangeInjectFeaturedNote">
+	<FormSwitch :value="$i.injectFeaturedNote" @update:modelValue="onChangeInjectFeaturedNote">
 		{{ $ts.showFeaturedNotesInTimeline }}
 	</FormSwitch>
 
-	<FormSwitch v-model:value="reportError">{{ $ts.sendErrorReports }}<template #desc>{{ $ts.sendErrorReportsDescription }}</template></FormSwitch>
+	<FormSwitch v-model="reportError">{{ $ts.sendErrorReports }}<template #desc>{{ $ts.sendErrorReportsDescription }}</template></FormSwitch>
 
 	<FormLink to="/settings/account-info">{{ $ts.accountInfo }}</FormLink>
 	<FormLink to="/settings/experimental-features">{{ $ts.experimentalFeatures }}</FormLink>
 
 	<FormGroup>
 		<template #label>{{ $ts.developer }}</template>
-		<FormSwitch v-model:value="debug" @update:value="changeDebug">
+		<FormSwitch v-model="debug" @update:modelValue="changeDebug">
 			DEBUG MODE
 		</FormSwitch>
 		<template v-if="debug">

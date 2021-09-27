@@ -1,19 +1,19 @@
 <template>
 <FormBase>
 	<FormSuspense :p="init">
-		<FormSwitch v-model:value="enableDiscordIntegration">
+		<FormSwitch v-model="enableDiscordIntegration">
 			{{ $ts.enable }}
 		</FormSwitch>
 
 		<template v-if="enableDiscordIntegration">
 			<FormInfo>Callback URL: {{ `${url}/api/dc/cb` }}</FormInfo>
 		
-			<FormInput v-model:value="discordClientId">
+			<FormInput v-model="discordClientId">
 				<template #prefix><i class="fas fa-key"></i></template>
 				Client ID
 			</FormInput>
 
-			<FormInput v-model:value="discordClientSecret">
+			<FormInput v-model="discordClientSecret">
 				<template #prefix><i class="fas fa-key"></i></template>
 				Client Secret
 			</FormInput>

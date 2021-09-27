@@ -47,7 +47,7 @@
 	<MkContainer :foldable="true" :expanded="true" class="_gap">
 		<template #header><i class="fas fa-sticky-note"></i> {{ $ts._pages.contents }}</template>
 		<div style="padding: 16px;">
-			<XBlocks class="content" v-model:value="content" :hpml="hpml"/>
+			<XBlocks class="content" v-model="content" :hpml="hpml"/>
 
 			<MkButton @click="add()" v-if="!readonly"><i class="fas fa-plus"></i></MkButton>
 		</div>

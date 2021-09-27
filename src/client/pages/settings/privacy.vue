@@ -1,34 +1,34 @@
 <template>
 <FormBase>
 	<FormGroup>
-		<FormSwitch v-model:value="isLocked" @update:value="save()">{{ $ts.makeFollowManuallyApprove }}</FormSwitch>
-		<FormSwitch v-model:value="autoAcceptFollowed" :disabled="!isLocked" @update:value="save()">{{ $ts.autoAcceptFollowed }}</FormSwitch>
+		<FormSwitch v-model="isLocked" @update:modelValue="save()">{{ $ts.makeFollowManuallyApprove }}</FormSwitch>
+		<FormSwitch v-model="autoAcceptFollowed" :disabled="!isLocked" @update:modelValue="save()">{{ $ts.autoAcceptFollowed }}</FormSwitch>
 		<template #caption>{{ $ts.lockedAccountInfo }}</template>
 	</FormGroup>
-	<FormSwitch v-model:value="hideOnlineStatus" @update:value="save()">
+	<FormSwitch v-model="hideOnlineStatus" @update:modelValue="save()">
 		{{ $ts.hideOnlineStatus }}
 		<template #desc>{{ $ts.hideOnlineStatusDescription }}</template>
 	</FormSwitch>
-	<FormSwitch v-model:value="noCrawle" @update:value="save()">
+	<FormSwitch v-model="noCrawle" @update:modelValue="save()">
 		{{ $ts.noCrawle }}
 		<template #desc>{{ $ts.noCrawleDescription }}</template>
 	</FormSwitch>
-	<FormSwitch v-model:value="isExplorable" @update:value="save()">
+	<FormSwitch v-model="isExplorable" @update:modelValue="save()">
 		{{ $ts.makeExplorable }}
 		<template #desc>{{ $ts.makeExplorableDescription }}</template>
 	</FormSwitch>
-	<FormSwitch v-model:value="rememberNoteVisibility" @update:value="save()">{{ $ts.rememberNoteVisibility }}</FormSwitch>
+	<FormSwitch v-model="rememberNoteVisibility" @update:modelValue="save()">{{ $ts.rememberNoteVisibility }}</FormSwitch>
 	<FormGroup v-if="!rememberNoteVisibility">
 		<template #label>{{ $ts.defaultNoteVisibility }}</template>
-		<FormSelect v-model:value="defaultNoteVisibility">
+		<FormSelect v-model="defaultNoteVisibility">
 			<option value="public">{{ $ts._visibility.public }}</option>
 			<option value="home">{{ $ts._visibility.home }}</option>
 			<option value="followers">{{ $ts._visibility.followers }}</option>
 			<option value="specified">{{ $ts._visibility.specified }}</option>
 		</FormSelect>
-		<FormSwitch v-model:value="defaultNoteLocalOnly">{{ $ts._visibility.localOnly }}</FormSwitch>
+		<FormSwitch v-model="defaultNoteLocalOnly">{{ $ts._visibility.localOnly }}</FormSwitch>
 	</FormGroup>
-	<FormSwitch v-model:value="keepCw" @update:value="save()">{{ $ts.keepCw }}</FormSwitch>
+	<FormSwitch v-model="keepCw" @update:modelValue="save()">{{ $ts.keepCw }}</FormSwitch>
 </FormBase>
 </template>
 

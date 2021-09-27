@@ -8,7 +8,7 @@
 			<template #suffix v-else>{{ $ts.none }} ({{ $ts.notRecommended }})</template>
 		</FormLink>
 
-		<FormSwitch v-model:value="enableRegistration">{{ $ts.enableRegistration }}</FormSwitch>
+		<FormSwitch v-model="enableRegistration">{{ $ts.enableRegistration }}</FormSwitch>
 
 		<FormButton @click="save" primary><i class="fas fa-save"></i> {{ $ts.save }}</FormButton>
 	</FormSuspense>

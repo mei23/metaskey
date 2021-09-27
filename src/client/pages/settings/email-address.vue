@@ -1,7 +1,7 @@
 <template>
 <FormBase>
 	<FormGroup>
-		<FormInput v-model:value="emailAddress" type="email">
+		<FormInput v-model="emailAddress" type="email">
 			{{ $ts.emailAddress }}
 			<template #desc v-if="$i.email && !$i.emailVerified">{{ $ts.verificationEmailSent }}</template>
 			<template #desc v-else-if="emailAddress === $i.email && $i.emailVerified">{{ $ts.emailVerified }}</template>

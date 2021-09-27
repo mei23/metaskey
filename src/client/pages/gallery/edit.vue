@@ -1,11 +1,11 @@
 <template>
 <FormBase>
 	<FormSuspense :p="init">
-		<FormInput v-model:value="title">
+		<FormInput v-model="title">
 			<span>{{ $ts.title }}</span>
 		</FormInput>
 
-		<FormTextarea v-model:value="description" :max="500">
+		<FormTextarea v-model="description" :max="500">
 			<span>{{ $ts.description }}</span>
 		</FormTextarea>
 
@@ -17,7 +17,7 @@
 			<FormButton @click="selectFile" primary><i class="fas fa-plus"></i> {{ $ts.attachFile }}</FormButton>
 		</FormGroup>
 
-		<FormSwitch v-model:value="isSensitive">{{ $ts.markAsSensitive }}</FormSwitch>
+		<FormSwitch v-model="isSensitive">{{ $ts.markAsSensitive }}</FormSwitch>
 
 		<FormButton v-if="postId" @click="save" primary><i class="fas fa-save"></i> {{ $ts.save }}</FormButton>
 		<FormButton v-else @click="save" primary><i class="fas fa-save"></i> {{ $ts.publish }}</FormButton>

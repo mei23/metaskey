@@ -2,7 +2,7 @@
 <FormBase>
 	<FormInfo warn>{{ $ts.customCssWarn }}</FormInfo>
 
-	<FormTextarea v-model:value="localCustomCss" manual-save tall class="_monospace" style="tab-size: 2;">
+	<FormTextarea v-model="localCustomCss" manual-save tall class="_monospace" style="tab-size: 2;">
 		<span>{{ $ts.local }}</span>
 	</FormTextarea>
 </FormBase>

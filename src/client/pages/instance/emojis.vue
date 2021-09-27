@@ -1,6 +1,6 @@
 <template>
 <div class="ogwlenmc">
-	<MkTab v-model:value="tab">
+	<MkTab v-model="tab">
 		<option value="local">{{ $ts.local }}</option>
 		<option value="remote">{{ $ts.remote }}</option>
 	</MkTab>

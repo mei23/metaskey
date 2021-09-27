@@ -1,23 +1,23 @@
 <template>
 <FormBase>
 	<FormSuspense :p="init">
-		<FormSwitch v-model:value="cacheRemoteFiles">
+		<FormSwitch v-model="cacheRemoteFiles">
 			{{ $ts.cacheRemoteFiles }}
 			<template #desc>{{ $ts.cacheRemoteFilesDescription }}</template>
 		</FormSwitch>
 
-		<FormSwitch v-model:value="proxyRemoteFiles">
+		<FormSwitch v-model="proxyRemoteFiles">
 			{{ $ts.proxyRemoteFiles }}
 			<template #desc>{{ $ts.proxyRemoteFilesDescription }}</template>
 		</FormSwitch>
 
-		<FormInput v-model:value="localDriveCapacityMb" type="number">
+		<FormInput v-model="localDriveCapacityMb" type="number">
 			<span>{{ $ts.driveCapacityPerLocalAccount }}</span>
 			<template #suffix>MB</template>
 			<template #desc>{{ $ts.inMb }}</template>
 		</FormInput>
 
-		<FormInput v-model:value="remoteDriveCapacityMb" type="number" :disabled="!cacheRemoteFiles">
+		<FormInput v-model="remoteDriveCapacityMb" type="number" :disabled="!cacheRemoteFiles">
 			<span>{{ $ts.driveCapacityPerRemoteAccount }}</span>
 			<template #suffix>MB</template>
 			<template #desc>{{ $ts.inMb }}</template>

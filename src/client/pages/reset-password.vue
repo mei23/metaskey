@@ -1,6 +1,6 @@
 <template>
 <FormBase v-if="token">
-	<FormInput v-model:value="password" type="password">
+	<FormInput v-model="password" type="password">
 		<template #prefix><i class="fas fa-lock"></i></template>
 		<span>{{ $ts.newPassword }}</span>
 	</FormInput>

@@ -44,8 +44,8 @@
 				</template>
 			</I18n>
 		</label>
-		<captcha v-if="meta.enableHcaptcha" class="_formBlock captcha" provider="hcaptcha" ref="hcaptcha" v-model:value="hCaptchaResponse" :sitekey="meta.hcaptchaSiteKey"/>
-		<captcha v-if="meta.enableRecaptcha" class="_formBlock captcha" provider="recaptcha" ref="recaptcha" v-model:value="reCaptchaResponse" :sitekey="meta.recaptchaSiteKey"/>
+		<captcha v-if="meta.enableHcaptcha" class="_formBlock captcha" provider="hcaptcha" ref="hcaptcha" v-model="hCaptchaResponse" :sitekey="meta.hcaptchaSiteKey"/>
+		<captcha v-if="meta.enableRecaptcha" class="_formBlock captcha" provider="recaptcha" ref="recaptcha" v-model="reCaptchaResponse" :sitekey="meta.recaptchaSiteKey"/>
 		<MkButton class="_formBlock" type="submit" :disabled="shouldDisableSubmitting" primary data-cy-signup-submit>{{ $ts.start }}</MkButton>
 	</template>
 </form>

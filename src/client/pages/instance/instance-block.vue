@@ -1,7 +1,7 @@
 <template>
 <FormBase>
 	<FormSuspense :p="init">
-		<FormTextarea v-model:value="blockedHosts">
+		<FormTextarea v-model="blockedHosts">
 			<span>{{ $ts.blockedInstances }}</span>
 			<template #desc>{{ $ts.blockedInstancesDescription }}</template>
 		</FormTextarea>

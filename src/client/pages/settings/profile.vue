@@ -8,26 +8,26 @@
 		<FormButton @click="changeBanner" primary>{{ $ts._profile.changeBanner }}</FormButton>
 	</FormGroup>
 
-	<FormInput v-model:value="name" :max="30" manual-save>
+	<FormInput v-model="name" :max="30" manual-save>
 		<span>{{ $ts._profile.name }}</span>
 	</FormInput>
 
-	<FormTextarea v-model:value="description" :max="500" tall manual-save>
+	<FormTextarea v-model="description" :max="500" tall manual-save>
 		<span>{{ $ts._profile.description }}</span>
 		<template #desc>{{ $ts._profile.youCanIncludeHashtags }}</template>
 	</FormTextarea>
 
-	<FormInput v-model:value="location" manual-save>
+	<FormInput v-model="location" manual-save>
 		<span>{{ $ts.location }}</span>
 		<template #prefix><i class="fas fa-map-marker-alt"></i></template>
 	</FormInput>
 
-	<FormInput v-model:value="birthday" type="date" manual-save>
+	<FormInput v-model="birthday" type="date" manual-save>
 		<span>{{ $ts.birthday }}</span>
 		<template #prefix><i class="fas fa-birthday-cake"></i></template>
 	</FormInput>
 
-	<FormSelect v-model:value="lang">
+	<FormSelect v-model="lang">
 		<template #label>{{ $ts.language }}</template>
 		<option v-for="x in langs" :value="x[0]" :key="x[0]">{{ x[1] }}</option>
 	</FormSelect>
@@ -37,11 +37,11 @@
 		<template #caption>{{ $ts._profile.metadataDescription }}</template>
 	</FormGroup>
 
-	<FormSwitch v-model:value="isCat">{{ $ts.flagAsCat }}<template #desc>{{ $ts.flagAsCatDescription }}</template></FormSwitch>
+	<FormSwitch v-model="isCat">{{ $ts.flagAsCat }}<template #desc>{{ $ts.flagAsCatDescription }}</template></FormSwitch>
 
-	<FormSwitch v-model:value="isBot">{{ $ts.flagAsBot }}<template #desc>{{ $ts.flagAsBotDescription }}</template></FormSwitch>
+	<FormSwitch v-model="isBot">{{ $ts.flagAsBot }}<template #desc>{{ $ts.flagAsBotDescription }}</template></FormSwitch>
 
-	<FormSwitch v-model:value="alwaysMarkNsfw">{{ $ts.alwaysMarkSensitive }}</FormSwitch>
+	<FormSwitch v-model="alwaysMarkNsfw">{{ $ts.alwaysMarkSensitive }}</FormSwitch>
 </FormBase>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
 <div class="xprsixdl _root">
-	<MkTab v-model:value="tab" v-if="$i">
+	<MkTab v-model="tab" v-if="$i">
 		<option value="explore"><i class="fas fa-icons"></i> {{ $ts.gallery }}</option>
 		<option value="liked"><i class="fas fa-heart"></i> {{ $ts._gallery.liked }}</option>
 		<option value="my"><i class="fas fa-edit"></i> {{ $ts._gallery.my }}</option>

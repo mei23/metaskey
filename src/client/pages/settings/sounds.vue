@@ -1,6 +1,6 @@
 <template>
 <FormBase>
-	<FormRange v-model:value="masterVolume" :min="0" :max="1" :step="0.05">
+	<FormRange v-model="masterVolume" :min="0" :max="1" :step="0.05">
 		<template #label><i class="fas fa-volume-icon"></i> {{ $ts.masterVolume }}</template>
 	</FormRange>
 

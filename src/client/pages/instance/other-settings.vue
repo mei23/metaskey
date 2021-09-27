@@ -2,17 +2,17 @@
 <FormBase>
 	<FormSuspense :p="init">
 		<FormGroup>
-			<FormInput v-model:value="summalyProxy">
+			<FormInput v-model="summalyProxy">
 				<template #prefix><i class="fas fa-link"></i></template>
 				Summaly Proxy URL
 			</FormInput>
 		</FormGroup>
 		<FormGroup>
-			<FormInput v-model:value="deeplAuthKey">
+			<FormInput v-model="deeplAuthKey">
 				<template #prefix><i class="fas fa-key"></i></template>
 				DeepL Auth Key
 			</FormInput>
-			<FormSwitch v-model:value="deeplIsPro">
+			<FormSwitch v-model="deeplIsPro">
 				Pro account
 			</FormSwitch>
 		</FormGroup>

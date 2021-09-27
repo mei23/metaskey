@@ -1,30 +1,30 @@
 <template>
 <FormBase>
 	<FormSuspense :p="init">
-		<FormSwitch v-model:value="enableEmail">{{ $ts.enableEmail }}<template #desc>{{ $ts.emailConfigInfo }}</template></FormSwitch>
+		<FormSwitch v-model="enableEmail">{{ $ts.enableEmail }}<template #desc>{{ $ts.emailConfigInfo }}</template></FormSwitch>
 
 		<template v-if="enableEmail">
-			<FormInput v-model:value="email" type="email">
+			<FormInput v-model="email" type="email">
 				<span>{{ $ts.emailAddress }}</span>
 			</FormInput>
 
 			<div class="_debobigegoItem _debobigegoNoConcat" v-sticky-container>
 				<div class="_debobigegoLabel">{{ $ts.smtpConfig }}</div>
 				<div class="main">
-					<FormInput v-model:value="smtpHost">
+					<FormInput v-model="smtpHost">
 						<span>{{ $ts.smtpHost }}</span>
 					</FormInput>
-					<FormInput v-model:value="smtpPort" type="number">
+					<FormInput v-model="smtpPort" type="number">
 						<span>{{ $ts.smtpPort }}</span>
 					</FormInput>
-					<FormInput v-model:value="smtpUser">
+					<FormInput v-model="smtpUser">
 						<span>{{ $ts.smtpUser }}</span>
 					</FormInput>
-					<FormInput v-model:value="smtpPass" type="password">
+					<FormInput v-model="smtpPass" type="password">
 						<span>{{ $ts.smtpPass }}</span>
 					</FormInput>
 					<FormInfo>{{ $ts.emptyToDisableSmtpAuth }}</FormInfo>
-					<FormSwitch v-model:value="smtpSecure">{{ $ts.smtpSecure }}<template #desc>{{ $ts.smtpSecureInfo }}</template></FormSwitch>
+					<FormSwitch v-model="smtpSecure">{{ $ts.smtpSecure }}<template #desc>{{ $ts.smtpSecureInfo }}</template></FormSwitch>
 				</div>
 			</div>
 

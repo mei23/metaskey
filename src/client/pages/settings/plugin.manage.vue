@@ -3,7 +3,7 @@
 	<FormGroup v-for="plugin in plugins" :key="plugin.id">
 		<template #label><span style="display: flex;"><b>{{ plugin.name }}</b><span style="margin-left: auto;">v{{ plugin.version }}</span></span></template>
 
-		<FormSwitch :value="plugin.active" @update:value="changeActive(plugin, $event)">{{ $ts.makeActive }}</FormSwitch>
+		<FormSwitch :value="plugin.active" @update:modelValue="changeActive(plugin, $event)">{{ $ts.makeActive }}</FormSwitch>
 		<div class="_debobigegoItem">
 			<div class="_debobigegoPanel" style="padding: 16px;">
 				<div class="_keyValue">

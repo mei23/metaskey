@@ -1,50 +1,50 @@
 <template>
 <FormBase>
 	<FormSuspense :p="init">
-		<FormInput v-model:value="name">
+		<FormInput v-model="name">
 			<span>{{ $ts.instanceName }}</span>
 		</FormInput>
 
-		<FormTextarea v-model:value="description">
+		<FormTextarea v-model="description">
 			<span>{{ $ts.instanceDescription }}</span>
 		</FormTextarea>
 
-		<FormInput v-model:value="iconUrl">
+		<FormInput v-model="iconUrl">
 			<template #prefix><i class="fas fa-link"></i></template>
 			<span>{{ $ts.iconUrl }}</span>
 		</FormInput>
 
-		<FormInput v-model:value="bannerUrl">
+		<FormInput v-model="bannerUrl">
 			<template #prefix><i class="fas fa-link"></i></template>
 			<span>{{ $ts.bannerUrl }}</span>
 		</FormInput>
 
-		<FormInput v-model:value="backgroundImageUrl">
+		<FormInput v-model="backgroundImageUrl">
 			<template #prefix><i class="fas fa-link"></i></template>
 			<span>{{ $ts.backgroundImageUrl }}</span>
 		</FormInput>
 
-		<FormInput v-model:value="tosUrl">
+		<FormInput v-model="tosUrl">
 			<template #prefix><i class="fas fa-link"></i></template>
 			<span>{{ $ts.tosUrl }}</span>
 		</FormInput>
 
-		<FormInput v-model:value="maintainerName">
+		<FormInput v-model="maintainerName">
 			<span>{{ $ts.maintainerName }}</span>
 		</FormInput>
 
-		<FormInput v-model:value="maintainerEmail" type="email">
+		<FormInput v-model="maintainerEmail" type="email">
 			<template #prefix><i class="fas fa-envelope"></i></template>
 			<span>{{ $ts.maintainerEmail }}</span>
 		</FormInput>
 
-		<FormInput v-model:value="maxNoteTextLength" type="number">
+		<FormInput v-model="maxNoteTextLength" type="number">
 			<template #prefix><i class="fas fa-pencil-alt"></i></template>
 			<span>{{ $ts.maxNoteTextLength }}</span>
 		</FormInput>
 
-		<FormSwitch v-model:value="enableLocalTimeline">{{ $ts.enableLocalTimeline }}</FormSwitch>
-		<FormSwitch v-model:value="enableGlobalTimeline">{{ $ts.enableGlobalTimeline }}</FormSwitch>
+		<FormSwitch v-model="enableLocalTimeline">{{ $ts.enableLocalTimeline }}</FormSwitch>
+		<FormSwitch v-model="enableGlobalTimeline">{{ $ts.enableGlobalTimeline }}</FormSwitch>
 		<FormInfo>{{ $ts.disablingTimelinesInfo }}</FormInfo>
 
 		<FormButton @click="save" primary><i class="fas fa-save"></i> {{ $ts.save }}</FormButton>

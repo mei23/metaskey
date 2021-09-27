@@ -1,7 +1,7 @@
 <template>
 <FormBase>
 	<FormGroup>
-		<FormTextarea v-model:value="installThemeCode">
+		<FormTextarea v-model="installThemeCode">
 			<span>{{ $ts._theme.code }}</span>
 		</FormTextarea>
 		<FormButton @click="() => preview(installThemeCode)" :disabled="installThemeCode == null" inline><i class="fas fa-eye"></i> {{ $ts.preview }}</FormButton>

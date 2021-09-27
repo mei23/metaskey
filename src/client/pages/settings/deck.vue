@@ -2,10 +2,10 @@
 <FormBase>
 	<FormGroup>
 		<template #label>{{ $ts.defaultNavigationBehaviour }}</template>
-		<FormSwitch v-model:value="navWindow">{{ $ts.openInWindow }}</FormSwitch>
+		<FormSwitch v-model="navWindow">{{ $ts.openInWindow }}</FormSwitch>
 	</FormGroup>
 
-	<FormSwitch v-model:value="alwaysShowMainColumn">{{ $ts._deck.alwaysShowMainColumn }}</FormSwitch>
+	<FormSwitch v-model="alwaysShowMainColumn">{{ $ts._deck.alwaysShowMainColumn }}</FormSwitch>
 
 	<FormRadios v-model="columnAlign">
 		<template #desc>{{ $ts._deck.columnAlign }}</template>
@@ -20,7 +20,7 @@
 		<option :value="48">{{ $ts.wide }}</option>
 	</FormRadios>
 
-	<FormInput v-model:value="columnMargin" type="number">
+	<FormInput v-model="columnMargin" type="number">
 		<span>{{ $ts._deck.columnMargin }}</span>
 		<template #suffix>px</template>
 	</FormInput>

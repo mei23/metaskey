@@ -1,18 +1,18 @@
 <template>
 <FormBase>
 	<FormSuspense :p="init">
-		<FormSwitch v-model:value="enableServiceWorker">
+		<FormSwitch v-model="enableServiceWorker">
 			{{ $ts.enableServiceworker }}
 			<template #desc>{{ $ts.serviceworkerInfo }}</template>
 		</FormSwitch>
 
 		<template v-if="enableServiceWorker">
-			<FormInput v-model:value="swPublicKey">
+			<FormInput v-model="swPublicKey">
 				<template #prefix><i class="fas fa-key"></i></template>
 				Public key
 			</FormInput>
 
-			<FormInput v-model:value="swPrivateKey">
+			<FormInput v-model="swPrivateKey">
 				<template #prefix><i class="fas fa-key"></i></template>
 				Private key
 			</FormInput>

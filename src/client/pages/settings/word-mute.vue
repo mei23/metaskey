@@ -1,6 +1,6 @@
 <template>
 <div>
-	<MkTab v-model:value="tab">
+	<MkTab v-model="tab">
 		<option value="soft">{{ $ts._wordMute.soft }}</option>
 		<option value="hard">{{ $ts._wordMute.hard }}</option>
 	</MkTab>
@@ -8,14 +8,14 @@
 		<div class="_debobigegoItem">
 			<div v-show="tab === 'soft'">
 				<FormInfo>{{ $ts._wordMute.softDescription }}</FormInfo>
-				<FormTextarea v-model:value="softMutedWords">
+				<FormTextarea v-model="softMutedWords">
 					<span>{{ $ts._wordMute.muteWords }}</span>
 					<template #desc>{{ $ts._wordMute.muteWordsDescription }}<br>{{ $ts._wordMute.muteWordsDescription2 }}</template>
 				</FormTextarea>
 			</div>
 			<div v-show="tab === 'hard'">
 				<FormInfo>{{ $ts._wordMute.hardDescription }}</FormInfo>
-				<FormTextarea v-model:value="hardMutedWords">
+				<FormTextarea v-model="hardMutedWords">
 					<span>{{ $ts._wordMute.muteWords }}</span>
 					<template #desc>{{ $ts._wordMute.muteWordsDescription }}<br>{{ $ts._wordMute.muteWordsDescription2 }}</template>
 				</FormTextarea>

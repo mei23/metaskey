@@ -23,11 +23,11 @@
 				</div>
 			</div>
 		</div>
-		<FormSwitch v-model:value="syncDeviceDarkMode">{{ $ts.syncDeviceDarkMode }}</FormSwitch>
+		<FormSwitch v-model="syncDeviceDarkMode">{{ $ts.syncDeviceDarkMode }}</FormSwitch>
 	</FormGroup>
 
 	<template v-if="darkMode">
-		<FormSelect v-model:value="darkThemeId">
+		<FormSelect v-model="darkThemeId">
 			<template #label>{{ $ts.themeForDarkMode }}</template>
 			<optgroup :label="$ts.darkThemes">
 				<option v-for="x in darkThemes" :value="x.id" :key="x.id">{{ x.name }}</option>
@@ -36,7 +36,7 @@
 				<option v-for="x in lightThemes" :value="x.id" :key="x.id">{{ x.name }}</option>
 			</optgroup>
 		</FormSelect>
-		<FormSelect v-model:value="lightThemeId">
+		<FormSelect v-model="lightThemeId">
 			<template #label>{{ $ts.themeForLightMode }}</template>
 			<optgroup :label="$ts.lightThemes">
 				<option v-for="x in lightThemes" :value="x.id" :key="x.id">{{ x.name }}</option>
@@ -47,7 +47,7 @@
 		</FormSelect>
 	</template>
 	<template v-else>
-		<FormSelect v-model:value="lightThemeId">
+		<FormSelect v-model="lightThemeId">
 			<template #label>{{ $ts.themeForLightMode }}</template>
 			<optgroup :label="$ts.lightThemes">
 				<option v-for="x in lightThemes" :value="x.id" :key="x.id">{{ x.name }}</option>
@@ -56,7 +56,7 @@
 				<option v-for="x in darkThemes" :value="x.id" :key="x.id">{{ x.name }}</option>
 			</optgroup>
 		</FormSelect>
-		<FormSelect v-model:value="darkThemeId">
+		<FormSelect v-model="darkThemeId">
 			<template #label>{{ $ts.themeForDarkMode }}</template>
 			<optgroup :label="$ts.darkThemes">
 				<option v-for="x in darkThemes" :value="x.id" :key="x.id">{{ x.name }}</option>

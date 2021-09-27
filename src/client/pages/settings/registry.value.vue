@@ -19,7 +19,7 @@
 		</FormGroup>
 
 		<FormGroup>
-			<FormTextarea tall v-model:value="valueForEditor" class="_monospace" style="tab-size: 2;">
+			<FormTextarea tall v-model="valueForEditor" class="_monospace" style="tab-size: 2;">
 				<span>{{ $ts.value }} (JSON)</span>
 			</FormTextarea>
 			<FormButton @click="save" primary><i class="fas fa-save"></i> {{ $ts.save }}</FormButton>

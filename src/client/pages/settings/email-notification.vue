@@ -1,22 +1,22 @@
 <template>
 <FormBase>
 	<FormGroup>
-		<FormSwitch v-model:value="mention">
+		<FormSwitch v-model="mention">
 			{{ $ts._notification._types.mention }}
 		</FormSwitch>
-		<FormSwitch v-model:value="reply">
+		<FormSwitch v-model="reply">
 			{{ $ts._notification._types.reply }}
 		</FormSwitch>
-		<FormSwitch v-model:value="quote">
+		<FormSwitch v-model="quote">
 			{{ $ts._notification._types.quote }}
 		</FormSwitch>
-		<FormSwitch v-model:value="follow">
+		<FormSwitch v-model="follow">
 			{{ $ts._notification._types.follow }}
 		</FormSwitch>
-		<FormSwitch v-model:value="receiveFollowRequest">
+		<FormSwitch v-model="receiveFollowRequest">
 			{{ $ts._notification._types.receiveFollowRequest }}
 		</FormSwitch>
-		<FormSwitch v-model:value="groupInvited">
+		<FormSwitch v-model="groupInvited">
 			{{ $ts._notification._types.groupInvited }}
 		</FormSwitch>
 	</FormGroup>
