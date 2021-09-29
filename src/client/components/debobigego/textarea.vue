@@ -34,7 +34,7 @@ export default defineComponent({
 		FormButton,
 	},
 	props: {
-		value: {
+		modelValue: {
 			required: false
 		},
 		required: {
@@ -74,8 +74,8 @@ export default defineComponent({
 		},
 	},
 	setup(props, context) {
-		const { value } = toRefs(props);
-		const v = ref(value.value);
+		const { modelValue } = toRefs(props);
+		const v = ref(modelValue.value);
 		const changed = ref(false);
 		const inputEl = ref(null);
 		const focus = () => inputEl.value.focus();
@@ -86,10 +86,10 @@ export default defineComponent({
 
 		const updated = () => {
 			changed.value = false;
-			context.emit('update:value', v.value);
+			context.emit('update:modelValue', v.value);
 		};
 
-		watch(value, newValue => {
+		watch(modelValue.value, newValue => {
 			v.value = newValue;
 		});
 

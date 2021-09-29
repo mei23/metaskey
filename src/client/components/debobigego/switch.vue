@@ -29,7 +29,7 @@ import './debobigego.scss';
 
 export default defineComponent({
 	props: {
-		value: {
+		modelValue: {
 			type: Boolean,
 			default: false
 		},
@@ -40,13 +40,13 @@ export default defineComponent({
 	},
 	computed: {
 		checked(): boolean {
-			return this.value;
+			return this.modelValue;
 		}
 	},
 	methods: {
 		toggle() {
 			if (this.disabled) return;
-			this.$emit('update:value', !this.checked);
+			this.$emit('update:modelValue', !this.checked);
 		}
 	}
 });

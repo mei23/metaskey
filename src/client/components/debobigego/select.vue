@@ -27,7 +27,7 @@ import './debobigego.scss';
 
 export default defineComponent({
 	props: {
-		value: {
+		modelValue: {
 			required: false
 		},
 		required: {
@@ -51,10 +51,10 @@ export default defineComponent({
 	computed: {
 		v: {
 			get() {
-				return this.value;
+				return this.modelValue;
 			},
 			set(v) {
-				this.$emit('update:value', v);
+				this.$emit('update:modelValue', v);
 			}
 		},
 	},

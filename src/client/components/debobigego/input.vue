@@ -46,7 +46,7 @@ export default defineComponent({
 		FormButton,
 	},
 	props: {
-		value: {
+		modelValue: {
 			required: false
 		},
 		type: {
@@ -104,8 +104,8 @@ export default defineComponent({
 	},
 	emits: ['change', 'keydown', 'enter'],
 	setup(props, context) {
-		const { value, type, autofocus } = toRefs(props);
-		const v = ref(value.value);
+		const { modelValue, type, autofocus } = toRefs(props);
+		const v = ref(modelValue.value);
 		const id = Math.random().toString(); // TODO: uuid?
 		const focused = ref(false);
 		const changed = ref(false);
@@ -131,13 +131,13 @@ export default defineComponent({
 		const updated = () => {
 			changed.value = false;
 			if (type?.value === 'number') {
-				context.emit('update:value', parseFloat(v.value));
+				context.emit('update:modelValue', parseFloat(v.value));
 			} else {
-				context.emit('update:value', v.value);
+				context.emit('update:modelValue', v.value);
 			}
 		};
 
-		watch(value, newValue => {
+		watch(modelValue.value, newValue => {
 			v.value = newValue;
 		});
 
