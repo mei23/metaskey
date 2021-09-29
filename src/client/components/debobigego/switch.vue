@@ -12,7 +12,7 @@
 			:disabled="disabled"
 			@keydown.enter="toggle"
 		>
-		<span class="button">
+		<span class="button" v-tooltip="checked ? $ts.itsOn : $ts.itsOff">
 			<span></span>
 		</span>
 		<span class="label">
