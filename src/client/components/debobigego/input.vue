@@ -102,7 +102,7 @@ export default defineComponent({
 			default: false
 		},
 	},
-	emits: ['change', 'keydown', 'enter'],
+	emits: ['change', 'keydown', 'enter', 'update:modelValue'],
 	setup(props, context) {
 		const { modelValue, type, autofocus } = toRefs(props);
 		const v = ref(modelValue.value);
