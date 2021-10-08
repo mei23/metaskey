@@ -26,7 +26,10 @@
 	</template>
 	<div class="buttons right">
 		<template v-if="info && info.actions && !narrow">
-			<button v-for="action in info.actions" class="_button button" :class="{ highlighted: action.highlighted }" @click.stop="action.handler" @touchstart="preventDrag" v-tooltip="action.text"><i :class="action.icon"></i></button>
+			<template v-for="action in info.actions">
+				<MkButton class="fullButton" v-if="action.asFullButton" @click.stop="action.handler" primary><i :class="action.icon" style="margin-right: 6px;"></i>{{ action.text }}</MkButton>
+				<button v-else class="_button button" :class="{ highlighted: action.highlighted }" @click.stop="action.handler" @touchstart="preventDrag" v-tooltip="action.text"><i :class="action.icon"></i></button>
+			</template>
 		</template>
 		<button v-if="shouldShowMenu" class="_button button" @click.stop="showMenu" @touchstart="preventDrag" v-tooltip="$ts.menu"><i class="fas fa-ellipsis-h"></i></button>
 	</div>
@@ -39,8 +42,13 @@ import * as tinycolor from 'tinycolor2';
 import { popupMenu } from '@client/os';
 import { url } from '@client/config';
 import { scrollToTop } from '@client/scripts/scroll';
+import MkButton from '@client/components/ui/button.vue';
 
 export default defineComponent({
+	components: {
+		MkButton
+	},
+
 	props: {
 		info: {
 			required: true
@@ -206,6 +214,12 @@ export default defineComponent({
 
 			&.highlighted {
 				color: var(--accent);
+			}
+		}
+
+		> .fullButton {
+			& + .fullButton {
+				margin-left: 12px;
 			}
 		}
 	}
