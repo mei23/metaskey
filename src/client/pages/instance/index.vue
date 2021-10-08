@@ -127,7 +127,7 @@ export default defineComponent({
 			pageProps.value = {};
 
 			nextTick(() => {
-				scroll(el.value, 0);
+				scroll(el.value, { top: 0 });
 			});
 		}, { immediate: true });
 

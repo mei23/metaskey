@@ -137,7 +137,7 @@ export default defineComponent({
 		},
 
 		top() {
-			scroll(this.$el, 0);
+			scroll(this.$el, { top: 0 });
 		},
 
 		async chooseList(ev) {

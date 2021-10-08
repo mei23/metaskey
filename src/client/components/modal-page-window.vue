@@ -11,7 +11,6 @@
 			<button class="_button" @click="$refs.modal.close()"><i class="fas fa-times"></i></button>
 		</div>
 		<div class="body _flat_">
-			<MkHeader v-if="!pageInfo?.hide" :info="pageInfo"/>
 			<keep-alive>
 				<component :is="component" v-bind="props" :ref="changePage"/>
 			</keep-alive>

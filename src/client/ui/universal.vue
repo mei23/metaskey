@@ -252,18 +252,6 @@ export default defineComponent({
 		min-width: 0;
 		background: var(--panel);
 
-		> .header {
-			position: fixed;
-			z-index: 1000;
-			top: 0;
-			//background-color: var(--panel);
-			-webkit-backdrop-filter: var(--blur, blur(32px));
-			backdrop-filter: var(--blur, blur(32px));
-			background-color: var(--header);
-			border-bottom: solid 0.5px var(--divider);
-			user-select: none;
-		}
-
 		> main {
 			min-width: 0;
 

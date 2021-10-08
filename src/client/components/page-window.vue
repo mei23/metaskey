@@ -9,14 +9,14 @@
 >
 	<template #header>
 		<template v-if="pageInfo">
-			{{ pageInfo.title }}
+			<i v-if="pageInfo.icon" class="icon" :class="pageInfo.icon" style="margin-right: 0.5em;"></i>
+			<span>{{ pageInfo.title }}</span>
 		</template>
 	</template>
 	<template #headerLeft>
 		<button v-if="history.length > 0" class="_button" @click="back()"><i class="fas fa-arrow-left"></i></button>
 	</template>
 	<div class="yrolvcoq _flat_">
-		<MkHeader :info="pageInfo"/>
 		<component :is="component" v-bind="props" :ref="changePage"/>
 	</div>
 </XWindow>

@@ -6,7 +6,6 @@
 		</template>
 	</template>
 
-	<MkHeader :info="pageInfo"/>
 	<router-view v-slot="{ Component }" class="_flat_">
 		<transition>
 			<keep-alive :include="['timeline']">

@@ -1,5 +1,5 @@
 <template>
-<div class="fdidabkb" :class="{ slim: narrow, thin }" :style="{ background: bg }">
+<div class="fdidabkb" :class="{ slim: narrow, thin }" :style="{ background: bg }" @click="onClick">
 	<template v-if="info">
 		<div class="titleContainer" @click="showTabsPopup">
 			<i v-if="info.icon" class="icon" :class="info.icon"></i>
@@ -35,9 +35,10 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import * as tinycolor from 'tinycolor2';
 import { popupMenu } from '@client/os';
 import { url } from '@client/config';
-import * as tinycolor from 'tinycolor2';
+import { scrollToTop } from '@client/scripts/scroll';
 
 export default defineComponent({
 	props: {
@@ -77,7 +78,7 @@ export default defineComponent({
 	},
 
 	mounted() {
-		const rawBg = this.info.bg || 'var(--bg)';
+		const rawBg = this.info?.bg || 'var(--bg)';
 		const bg = tinycolor(rawBg.startsWith('var(') ? getComputedStyle(document.documentElement).getPropertyValue(rawBg.slice(4, -1)) : rawBg);
 		bg.setAlpha(0.85);
 		this.bg = bg.toRgbString();
@@ -136,6 +137,10 @@ export default defineComponent({
 
 		preventDrag(ev) {
 			ev.stopPropagation();
+		},
+
+		onClick(ev) {
+			scrollToTop(this.$el, { behavior: 'smooth' });
 		}
 	}
 });
@@ -146,7 +151,7 @@ export default defineComponent({
 	--height: 60px;
 	display: flex;
 	position: sticky;
-	top: 0;
+	top: var(--stickyTop, 0);
 	z-index: 1000;
 	width: 100%;
 	-webkit-backdrop-filter: var(--blur, blur(15px));
