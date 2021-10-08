@@ -1,5 +1,5 @@
 <template>
-<div class="fdidabkb" :class="{ slim: narrow, thin }" :key="key">
+<div class="fdidabkb" :class="{ slim: narrow, thin }" :style="{ background: bg }">
 	<template v-if="info">
 		<div class="titleContainer" @click="showTabsPopup">
 			<i v-if="info.icon" class="icon" :class="info.icon"></i>
@@ -37,6 +37,7 @@
 import { defineComponent } from 'vue';
 import { popupMenu } from '@client/os';
 import { url } from '@client/config';
+import * as tinycolor from 'tinycolor2';
 
 export default defineComponent({
 	props: {
@@ -54,9 +55,9 @@ export default defineComponent({
 
 	data() {
 		return {
+			bg: null,
 			narrow: false,
 			height: 0,
-			key: 0,
 		};
 	},
 
@@ -75,13 +76,12 @@ export default defineComponent({
 		}
 	},
 
-	watch: {
-		info() {
-			this.key++;
-		},
-	},
-
 	mounted() {
+		const rawBg = this.info.bg || 'var(--bg)';
+		const bg = tinycolor(rawBg.startsWith('var(') ? getComputedStyle(document.documentElement).getPropertyValue(rawBg.slice(4, -1)) : rawBg);
+		bg.setAlpha(0.85);
+		this.bg = bg.toRgbString();
+	
 		if (this.$el.parentElement == null) return;
 		this.narrow = this.$el.parentElement.offsetWidth < 500;
 		new ResizeObserver((entries, observer) => {
@@ -145,7 +145,12 @@ export default defineComponent({
 .fdidabkb {
 	--height: 60px;
 	display: flex;
+	position: sticky;
+	top: 0;
+	z-index: 1000;
 	width: 100%;
+	-webkit-backdrop-filter: var(--blur, blur(15px));
+	backdrop-filter: var(--blur, blur(15px));
 
 	&.thin {
 		--height: 50px;

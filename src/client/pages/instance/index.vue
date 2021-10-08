@@ -79,7 +79,8 @@ export default defineComponent({
 	setup(props, context) {
 		const indexInfo = {
 			title: i18n.locale.instance,
-			icon: 'fas fa-cog'
+			icon: 'fas fa-cog',
+			bg: 'var(--bg)',
 		};
 		const INFO = ref(indexInfo);
 		const page = ref(props.initialPage);
