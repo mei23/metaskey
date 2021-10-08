@@ -39,6 +39,7 @@
 		</div>
 	</div>
 	<div class="main">
+		<h1 v-if="INFO" style="font-size: 1.3em; margin: 32px 0 0 32px;"><span style="opacity: 0.6;">設定</span> / {{ INFO.title }}</h1>
 		<component :is="component" :key="page" @info="onInfo" v-bind="pageProps"/>
 	</div>
 </div>
@@ -170,6 +171,7 @@ export default defineComponent({
 		const emailNotConfigured = computed(() => instance.enableEmail && ($i.email == null || !$i.emailVerified));
 
 		return {
+			INFO,
 			[symbols.PAGE_INFO]: INFO,
 			page,
 			narrow,

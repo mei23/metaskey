@@ -18,7 +18,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import MkModal from '@client/components/ui/modal.vue';
-import XHeader from '@client/ui/_common_/header.vue';
 import { popout } from '@client/scripts/popout';
 import copyToClipboard from '@client/scripts/copy-to-clipboard';
 import { resolve } from '@client/router';
@@ -29,7 +28,6 @@ import * as os from '@client/os';
 export default defineComponent({
 	components: {
 		MkModal,
-		XHeader,
 	},
 
 	inject: {

@@ -19,7 +19,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import XWindow from '@client/components/ui/window.vue';
-import XHeader from '@client/ui/_common_/header.vue';
 import { popout } from '@client/scripts/popout';
 import copyToClipboard from '@client/scripts/copy-to-clipboard';
 import { resolve } from '@client/router';
@@ -29,7 +28,6 @@ import * as symbols from '@client/symbols';
 export default defineComponent({
 	components: {
 		XWindow,
-		XHeader,
 	},
 
 	inject: {

@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import XHeader from '../_common_/header.vue';
+import XHeader from '../../components/global/header.vue';
 import * as os from '@client/os';
 import copyToClipboard from '@client/scripts/copy-to-clipboard';
 import { resolve } from '@client/router';

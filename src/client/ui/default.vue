@@ -13,9 +13,6 @@
 		</template>
 
 		<main class="main" @contextmenu.stop="onContextmenu" :style="{ background: pageInfo?.bg }">
-			<header class="header" @click="onHeaderClick">
-				<XHeader :info="pageInfo" :back-button="true" @back="back()"/>
-			</header>
 			<div class="content" :class="{ _flat_: !fullView }">
 				<router-view v-slot="{ Component }">
 					<transition :name="$store.state.animation ? 'page' : ''" mode="out-in" @enter="onTransition">
@@ -67,7 +64,7 @@ import { StickySidebar } from '@client/scripts/sticky-sidebar';
 import XSidebar from './default.sidebar.vue';
 import XDrawerSidebar from '@client/ui/_common_/sidebar.vue';
 import XCommon from './_common_/common.vue';
-import XHeader from './_common_/header.vue';
+import XHeader from '../components/global/header.vue';
 import * as os from '@client/os';
 import { menuDef } from '@client/menu';
 import * as symbols from '@client/symbols';

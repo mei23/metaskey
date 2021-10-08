@@ -101,7 +101,7 @@ import XSidebar from '@client/ui/_common_/sidebar.vue';
 import XWidgets from './widgets.vue';
 import XCommon from '../_common_/common.vue';
 import XSide from './side.vue';
-import XHeader from '../_common_/header.vue';
+import XHeader from '../../components/global/header.vue';
 import XHeaderClock from './header-clock.vue';
 import * as os from '@client/os';
 import { router } from '@client/router';

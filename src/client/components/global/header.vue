@@ -1,10 +1,5 @@
 <template>
-<div class="fdidabkb" :class="{ slim: titleOnly || narrow }" :style="`--height:${height};`" :key="key">
-	<transition :name="$store.state.animation ? 'header' : ''" mode="out-in" appear>
-		<div class="buttons left" v-if="backButton">
-			<button class="_button button back" @click.stop="$emit('back')" @touchstart="preventDrag" v-tooltip="$ts.goBack"><i class="fas fa-chevron-left"></i></button>
-		</div>
-	</transition>
+<div class="fdidabkb" :class="{ slim: titleOnly || narrow }" :style="{ background: bg }">
 	<template v-if="info">
 		<div class="titleContainer" @click="showTabsPopup">
 			<i v-if="info.icon" class="icon" :class="info.icon"></i>
@@ -43,19 +38,13 @@
 import { defineComponent } from 'vue';
 import { popupMenu } from '@client/os';
 import { url } from '@client/config';
+import * as symbols from '@client/symbols';
+import * as tinycolor from 'tinycolor2';
 
 export default defineComponent({
 	props: {
-		info: {
-			required: true
-		},
 		menu: {
 			required: false
-		},
-		backButton: {
-			type: Boolean,
-			required: false,
-			default: false,
 		},
 		closeButton: {
 			type: Boolean,
@@ -71,9 +60,10 @@ export default defineComponent({
 
 	data() {
 		return {
+			info: null,
+			bg: null,
 			narrow: false,
 			height: 0,
-			key: 0,
 		};
 	},
 
@@ -92,17 +82,16 @@ export default defineComponent({
 		}
 	},
 
-	watch: {
-		info() {
-			this.key++;
-		},
+	created() {
+		this.info = this.$parent[symbols.PAGE_INFO];
+		const bg = tinycolor(this.info.bg.startsWith('var(') ? getComputedStyle(document.documentElement).getPropertyValue(this.info.bg.slice(4, -1)) : this.info.bg);
+		bg.setAlpha(0.85);
+		this.bg = bg.toRgbString();
 	},
 
 	mounted() {
-		this.height = this.$el.parentElement.offsetHeight + 'px';
 		this.narrow = this.titleOnly || this.$el.parentElement.offsetWidth < 500;
 		new ResizeObserver((entries, observer) => {
-			this.height = this.$el.parentElement.offsetHeight + 'px';
 			this.narrow = this.titleOnly || this.$el.parentElement.offsetWidth < 500;
 		}).observe(this.$el);
 	},
@@ -161,7 +150,13 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .fdidabkb {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
 	display: flex;
+	-webkit-backdrop-filter: var(--blur, blur(16px));
+	backdrop-filter: var(--blur, blur(16px));
+	--height: 60px;
 
 	&.slim {
 		text-align: center;
@@ -220,6 +215,7 @@ export default defineComponent({
 		text-align: left;
 		font-weight: bold;
 		flex-shrink: 0;
+		margin-left: 16px;
 
 		> .avatar {
 			$size: 32px;

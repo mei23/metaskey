@@ -24,7 +24,7 @@
 <script lang="ts">
 import { defineComponent, defineAsyncComponent } from 'vue';
 import { host } from '@client/config';
-import XHeader from './_common_/header.vue';
+import XHeader from '../components/global/header.vue';
 import XCommon from './_common_/common.vue';
 import * as symbols from '@client/symbols';
 

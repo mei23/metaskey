@@ -1,18 +1,21 @@
 <template>
-<div class="cmuxhskf" v-hotkey.global="keymap" v-size="{ min: [800] }">
-	<XTutorial v-if="$store.reactiveState.tutorial.value != -1" class="tutorial _block"/>
-	<XPostForm v-if="$store.reactiveState.showFixedPostForm.value" class="post-form _block" fixed/>
+<div>
+	<MkHeader></MkHeader>
+	<div class="cmuxhskf" v-hotkey.global="keymap" v-size="{ min: [800] }">
+		<XTutorial v-if="$store.reactiveState.tutorial.value != -1" class="tutorial _block"/>
+		<XPostForm v-if="$store.reactiveState.showFixedPostForm.value" class="post-form _block" fixed/>
 
-	<div class="new" v-if="queue > 0"><button class="_buttonPrimary" @click="top()">{{ $ts.newNoteRecived }}</button></div>
-	<div class="tl _block">
-		<XTimeline ref="tl" class="tl"
-			:key="src"
-			:src="src"
-			:sound="true"
-			@before="before()"
-			@after="after()"
-			@queue="queueUpdated"
-		/>
+		<div class="new" v-if="queue > 0"><button class="_buttonPrimary" @click="top()">{{ $ts.newNoteRecived }}</button></div>
+		<div class="tl _block">
+			<XTimeline ref="tl" class="tl"
+				:key="src"
+				:src="src"
+				:sound="true"
+				@before="before()"
+				@after="after()"
+				@queue="queueUpdated"
+			/>
+		</div>
 	</div>
 </div>
 </template>
