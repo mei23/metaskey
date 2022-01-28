@@ -1,0 +1,30 @@
+name: GHCR
+
+on:
+  push:
+    branches:
+      - sakura-tel/main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: remitocat
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          tags: ghcr.io/sakura-tel/misskey:latest
