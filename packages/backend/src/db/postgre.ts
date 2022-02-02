@@ -40,6 +40,8 @@ import { Signin } from '@/models/entities/signin';
 import { AuthSession } from '@/models/entities/auth-session';
 import { FollowRequest } from '@/models/entities/follow-request';
 import { Emoji } from '@/models/entities/emoji';
+import { ReversiGame } from '@/models/entities/games/reversi/game';
+import { ReversiMatching } from '@/models/entities/games/reversi/matching';
 import { UserNotePining } from '@/models/entities/user-note-pining';
 import { Poll } from '@/models/entities/poll';
 import { UserKeypair } from '@/models/entities/user-keypair';
@@ -164,6 +166,8 @@ export const entities = [
 	AntennaNote,
 	PromoNote,
 	PromoRead,
+	ReversiGame,
+	ReversiMatching,
 	Relay,
 	MutedNote,
 	Channel,

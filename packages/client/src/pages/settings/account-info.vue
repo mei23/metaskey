@@ -94,6 +94,10 @@
 			<template #key>{{ $ts.driveUsage }}</template>
 			<template #value>{{ bytes(stats.driveUsage) }}</template>
 		</MkKeyValue>
+		<MkKeyValue oneline style="margin: 1em 0;">
+			<template #key>{{ $ts.reversiCount }}</template>
+			<template #value>{{ number(stats.reversiCount) }}</template>
+		</MkKeyValue>
 	</FormSection>
 
 	<FormSection>

@@ -29,6 +29,8 @@ import { packedFederationInstanceSchema } from '@/models/schema/federation-insta
 import { packedQueueCountSchema } from '@/models/schema/queue';
 import { packedGalleryPostSchema } from '@/models/schema/gallery-post';
 import { packedEmojiSchema } from '@/models/schema/emoji';
+import { packedReversiGameSchema } from '@/models/repositories/games/reversi/game';
+import { packedReversiMatchingSchema } from '@/models/repositories/games/reversi/matching';
 
 export const refs = {
 	UserLite: packedUserLiteSchema,
@@ -61,6 +63,8 @@ export const refs = {
 	FederationInstance: packedFederationInstanceSchema,
 	GalleryPost: packedGalleryPostSchema,
 	Emoji: packedEmojiSchema,
+	ReversiGame: packedReversiGameSchema,
+	ReversiMatching: packedReversiMatchingSchema,
 };
 
 // Packed = SchemaTypeDef<typeof refs[x]>; とすると展開されてマウスホバー時に型表示が使い物にならなくなる
