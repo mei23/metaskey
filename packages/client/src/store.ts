@@ -259,6 +259,10 @@ export class ColdDeviceStorage {
 		sound_chatBg: { type: 'syuilo/waon', volume: 1 },
 		sound_antenna: { type: 'syuilo/triple', volume: 1 },
 		sound_channel: { type: 'syuilo/square-pico', volume: 1 },
+		sound_reversiPutBlack: { type: 'syuilo/kick', volume: 0.3 },
+		sound_reversiPutWhite: { type: 'syuilo/snare', volume: 0.3 },
+		roomGraphicsQuality: 'medium' as 'cheep' | 'low' | 'medium' | 'high' | 'ultra',
+		roomUseOrthographicCamera: true,
 	};
 
 	public static watchers = [];
