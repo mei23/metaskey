@@ -1,0 +1,20 @@
+{
+	id: 'e98236c2-88b2-4ccd-be6e-c44f42c19252',
+
+	name: 'Metaskey Dark',
+	author: 'minemu',
+
+	base: 'dark',
+
+	props: {
+		bg: '#00284d',
+		fg: '#ffeecc',
+		navBg: '#00284d',
+		navFg: '#ffeecc',
+		accent: '#1ea2e4',
+		indicator: '#005099',
+		navActive: '#ffeecc',
+		navHoverFg: '#CC2222',
+		navIndicator: '#CC2222',
+	},
+}
