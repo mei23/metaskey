@@ -226,6 +226,14 @@ export const defaultStore = markRaw(new Storage('base', {
 		where: 'device',
 		default: false
 	},
+	roomGraphicsQuality: {
+		where: 'device',
+		default: 'medium' as 'cheep' | 'low' | 'medium' | 'high' | 'ultra'
+	},
+  roomUseOrthographicCamera: {
+		where: 'device',
+		default: true
+	}
 }));
 
 // TODO: 他のタブと永続化されたstateを同期
@@ -261,8 +269,6 @@ export class ColdDeviceStorage {
 		sound_channel: { type: 'syuilo/square-pico', volume: 1 },
 		sound_reversiPutBlack: { type: 'syuilo/kick', volume: 0.3 },
 		sound_reversiPutWhite: { type: 'syuilo/snare', volume: 0.3 },
-		roomGraphicsQuality: 'medium' as 'cheep' | 'low' | 'medium' | 'high' | 'ultra',
-		roomUseOrthographicCamera: true,
 	};
 
 	public static watchers = [];

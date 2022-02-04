@@ -31,11 +31,11 @@
 			<MkButton @click="add()"><i class="fas fa-box-open"></i> {{ $ts._rooms.addFurniture }}</MkButton>
 		</div>
 		<div class="_content">
-			<MkSelect :model-value="roomType" @update:modelValue="updateRoomType($event)">
+			<!--<MkSelect :model-value="roomType" @update:modelValue="updateRoomType($event)">
 				<template #label>{{ $ts._rooms.roomType }}</template>
 				<option value="default">{{ $ts._rooms._roomType.default }}</option>
 				<option value="washitsu">{{ $ts._rooms._roomType.washitsu }}</option>
-			</MkSelect>
+			</MkSelect>-->
 			<label v-if="roomType === 'default'">
 				<span>{{ $ts._rooms.carpetColor }}</span>
 				<input type="color" :value="carpetColor" @change="updateCarpetColor($event)"/>
@@ -60,7 +60,7 @@ import MkButton from '@/components/ui/button.vue';
 import MkSelect from '@/components/form/select.vue';
 import { selectFile } from '@/scripts/select-file';
 import * as os from '@/os';
-import { ColdDeviceStorage } from '@/store';
+import { defaultStore } from '@/store';
 import * as symbols from '@/symbols';
 
 let room: Room;
@@ -133,7 +133,7 @@ export default defineComponent({
 		this.carpetColor = roomInfo.carpetColor;
 
 		room = new Room(this.user, this.isMyRoom, roomInfo, this.$el, {
-			graphicsQuality: ColdDeviceStorage.get('roomGraphicsQuality'),
+			graphicsQuality: defaultStore.state.roomGraphicsQuality,
 			onChangeSelect: obj => {
 				this.objectSelected = obj != null;
 				if (obj) {
@@ -148,7 +148,7 @@ export default defineComponent({
 					});
 				}
 			},
-			useOrthographicCamera: ColdDeviceStorage.get('roomUseOrthographicCamera'),
+			useOrthographicCamera: defaultStore.state.roomUseOrthographicCamera,
 		});
 	},
 

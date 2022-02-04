@@ -55,6 +55,19 @@
 	</FormSection>
 
 	<FormSection>
+		<template #label>{{ $ts.rooms }}</template>
+		<FormSelect v-model="roomGraphicsQuality" class="_formBlock">
+			<template #label>{{ $ts._rooms.graphicsQuality }}</template>
+			<option value="ultra">{{ $ts._rooms._graphicsQuality.ultra }}</option>
+			<option value="high">{{ $ts._rooms._graphicsQuality.high }}</option>
+			<option value="medium">{{ $ts._rooms._graphicsQuality.medium }}</option>
+			<option value="low">{{ $ts._rooms._graphicsQuality.low }}</option>
+			<option value="cheep">{{ $ts._rooms._graphicsQuality.cheep }}</option>
+		</FormSelect>
+		<FormSwitch v-model="roomUseOrthographicCamera">{{ $ts._rooms.useOrthographicCamera }}</FormSwitch>
+	</FormSection>
+
+	<FormSection>
 		<FormSwitch v-model="aiChanMode">{{ $ts.aiChanMode }}</FormSwitch>
 	</FormSection>
 
@@ -78,7 +91,6 @@
 	</FormGroup>
 
 	<FormLink to="/settings/deck" class="_formBlock">{{ $ts.deck }}</FormLink>
-
 	<FormLink to="/settings/custom-css" class="_formBlock"><template #icon><i class="fas fa-code"></i></template>{{ $ts.customCss }}</FormLink>
 </div>
 </template>
@@ -147,6 +159,8 @@ export default defineComponent({
 		useReactionPickerForContextMenu: defaultStore.makeGetterSetter('useReactionPickerForContextMenu'),
 		squareAvatars: defaultStore.makeGetterSetter('squareAvatars'),
 		aiChanMode: defaultStore.makeGetterSetter('aiChanMode'),
+		roomGraphicsQuality: defaultStore.makeGetterSetter('roomGraphicsQuality'),
+		roomUseOrthographicCamera: defaultStore.makeGetterSetter('roomUseOrthographicCamera'),
 	},
 
 	watch: {

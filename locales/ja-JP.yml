@@ -1381,6 +1381,14 @@ _rooms:
   chooseImage: "画像を選択"
   roomType: "部屋のタイプ"
   carpetColor: "床の色"
+  graphicsQuality: "グラフィックの品質"
+  _graphicsQuality:
+    ultra: "最高"
+    high: "高"
+    medium: "中"
+    low: "低"
+    cheep: "最低"
+  useOrthographicCamera: "平行投影カメラを使用する"
   _roomType:
     default: "デフォルト"
     washitsu: "和室"
