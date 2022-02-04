@@ -11,7 +11,7 @@ export type Theme = {
 };
 
 export const lightTheme: Theme = require('@/themes/_light.json5');
-export const darkTheme: Theme = require('@/themes/_dark.json5');
+export const darkTheme: Theme = require('@/themes/d-metaskey-dark.json5');
 
 export const themeProps = Object.keys(lightTheme.props).filter(key => !key.startsWith('X'));
 
@@ -29,6 +29,7 @@ export const builtinThemes = [
 	require('@/themes/d-botanical.json5'),
 	require('@/themes/d-pumpkin.json5'),
 	require('@/themes/d-black.json5'),
+	require('@/themes/d-metaskey-dark.json5'),
 ] as Theme[];
 
 let timeout = null;
