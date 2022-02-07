@@ -4,7 +4,7 @@
 [![Test](https://github.com/sakura-tel/metaskey/actions/workflows/test.yml/badge.svg)](https://github.com/sakura-tel/metaskey/actions/workflows/test.yml)
 ![license](https://img.shields.io/github/license/sakura-tel/metaskey)
 
-🪐 Metaskey is an interplanetary microblogging platform connected to the Metaverse, which is based on **Misskey v12**.
+🪐 Metaskey is an interplanetary microblogging platform based on **Misskey v12**.
 
 [Official Instance](https://metaskey.net)
 
