@@ -1,12 +1,16 @@
+<div align="center">
+
 <h1>Metaskey</h1>
 
 [![GHCR](https://github.com/sakura-tel/metaskey/actions/workflows/ghcr.yml/badge.svg)](https://github.com/sakura-tel/metaskey/actions/workflows/ghcr.yml)
 [![Test](https://github.com/sakura-tel/metaskey/actions/workflows/test.yml/badge.svg)](https://github.com/sakura-tel/metaskey/actions/workflows/test.yml)
-![license](https://img.shields.io/github/license/sakura-tel/metaskey)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/w/sakura-tel/metaskey)
 
-🪐 Metaskey is an interplanetary microblogging platform based on **Misskey v12**.
+🪐 Metaskey is an interplanetary microblogging platform based on [Misskey v12](https://github.com/misskey-dev/misskey).
 
 [Official Instance](https://metaskey.net)
+
+</div>
 
 ## Contribution
 
