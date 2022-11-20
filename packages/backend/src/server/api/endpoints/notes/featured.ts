@@ -50,7 +50,9 @@ export default define(meta, async (ps, user) => {
 		.leftJoinAndSelect('renote.user', 'renoteUser');
 
 	if (user) generateMutedUserQuery(query, user);
-	if (user) generateBlockedUserQuery(query, user);
+	if (user && !user.isAdmin && !user.isModerator) {
+		generateBlockedUserQuery(query, user);
+	}
 
 	let notes = await query
 		.orderBy('note.score', 'DESC')
