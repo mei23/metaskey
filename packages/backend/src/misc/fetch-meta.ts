@@ -27,7 +27,7 @@ export async function fetchMeta(noCache = false): Promise<Meta> {
 					},
 					['id'],
 				)
-				.then((x) => transactionalEntityManager.findOneByOrFail(Meta, x.identifiers[0]));
+				.then((x) => transactionalEntityManager.findOneOrFail(Meta, x.identifiers[0])) as Meta;
 
 			cache = saved;
 			return saved;
